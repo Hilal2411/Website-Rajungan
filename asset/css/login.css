@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f5a623;
+    background: linear-gradient(to bottom,#BDCDD6, #088178 );
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@ body {
 .header h2 {
     margin: 10px 0 5px;
     font-size: 24px;
-    color: #ff5e00;
+    color: #088178;
 }
 
 .header p {
@@ -60,14 +60,14 @@ form input {
 form a {
     text-align: right;
     text-decoration: none;
-    color: #ff5e00;
+    color: #3572EF;
     font-size: 14px;
     margin-bottom: 20px;
 }
 
 form button {
     padding: 10px;
-    background: #ff5e00;
+    background: #088178;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -75,7 +75,7 @@ form button {
 }
 
 form button:hover {
-    background: #e55300;
+    background: #065953;
 }
 
 form p {
@@ -85,6 +85,6 @@ form p {
 }
 
 form p a {
-    color: #ff5e00;
+    color: #3572EF;
     text-decoration: none;
 }

@@ -30,16 +30,16 @@
             <li><a href="#kontak">Contact</a></li>
             <a href="#" id="close"><i class="fa fa-times"></i></a>
             <li>
-              <a href="keranjang.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a>
 
             </li>
             <li>
-              <a href="login.html"></i><i class="bi bi-person-circle"></i></a>
+              <a href="login.php"></i><i class="bi bi-person-circle"></i></a>
             </li>
           </ul>
         </div>
       <div id="mobile">
-        <a href="cart.html"><i class="fa fa-shopping-bag"></i></a>
+        <a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a>
         <i class="fa fa-outdent" id="bar"></i>
       </div>
     </section>
@@ -74,7 +74,7 @@
                   </div>
                   <h4>Rp. 100.000,-</h4>
               </div>
-              <button class="add-to-cart" onclick="addToCart('Daging Jumbo', 100000, './asset/img/jumbo.jpg')"> 
+              <button class="add-to-cart">
                   <i class="bi bi-cart cart"></i>
               </button>
           </div>
@@ -93,11 +93,11 @@
                   </div>
                   <h4>Rp. 60.000,-</h4>
               </div>
-              <button class="add-to-cart" onclick="addToCart('Daging Merah', 60000, './asset/img/capit rajungan.png')">
+              <button class="add-to-cart">
                   <i class="bi bi-cart cart"></i>
               </button>
           </div>
-          
+  
           <div class="pro" data-name="Capit Kepiting" data-price="50000" data-image="./asset/img/capit kepiting.webp">
               <img src="./asset/img/capit kepiting.webp" alt="" />
               <div class="des">
@@ -112,8 +112,8 @@
                   </div>
                   <h4>Rp. 50.000,-</h4>
               </div>
-              <button class="add-to-cart" onclick="addToCart('Capit Kepiting', 50000, './asset/img/capit kepiting.webp')"> 
-                  <i class="bi bi-cart cart"></i> 
+              <button class="add-to-cart">
+                  <i class="bi bi-cart cart"></i>
               </button>
           </div>
       </div>
@@ -294,6 +294,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="./asset/js/main.js"></script>
+    <script src="asset/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

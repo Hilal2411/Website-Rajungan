@@ -10,9 +10,9 @@
     <div class="container">
         <div class="form-container login-container" id="login-container">
             <div class="header">
-                <img src="logo.png" alt="Logo">
-                <h2>Your Name</h2>
-                <p>Place Sub Name</p>
+                <img src="./asset/img/Logo.png" alt="Logo">
+                <h2>Rajungan Seafood</h2>
+                
             </div>
             <form>
                 <input type="email" placeholder="password" required>
@@ -24,7 +24,7 @@
         </div>
         <div class="form-container signup-container" id="signup-container" style="display: none;">
             <div class="header">
-                <img src="logo.png" alt="Logo">
+                <img src="./asset/img/Logo.png" alt="Logo">
                 <h2>Your Name</h2>
                 <p>Place Sub Name</p>
             </div>
@@ -38,7 +38,7 @@
         </div>
         <div class="form-container forgot-password-container" id="forgot-password-container" style="display: none;">
             <div class="header">
-                <img src="logo.png" alt="Logo">
+                <img src="./asset/img/Logo.png" alt="Logo">
                 <h2>Your Name</h2>
                 <p>Place Sub Name</p>
             </div>

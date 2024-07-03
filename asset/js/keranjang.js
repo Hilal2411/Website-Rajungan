@@ -70,9 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.delete-button').forEach(button => {
             button.addEventListener('click', (event) => {
                 const index = parseInt(event.target.dataset.index);
-                cart.splice(index, 1);
-                saveCartToLocalStorage();
-                updateCart();
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'You won\'t be able to revert this!',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        cart.splice(index, 1);
+                        saveCartToLocalStorage();
+                        updateCart();
+                        Swal.fire('Deleted!', 'Your item has been deleted.', 'success');
+                    }
+                });
             });
         });
 

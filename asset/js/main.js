@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    console.log("Testing");
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
     addToCartButtons.forEach(button => {
@@ -17,15 +19,47 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check if item is already in the cart
         const existingItem = cartItems.find(item => item.name === name);
         if (existingItem) {
-            // Optionally, you could show a message that the item is already in the cart
-            return;
+            // If item already exists, increase the quantity
+            existingItem.quantity += 1;
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.onmouseenter = Swal.stopTimer;
+                  toast.onmouseleave = Swal.resumeTimer;
+                }
+              });
+              Toast.fire({
+                icon: "success",
+                title: `${name} telah ditambahkan menjadi ${existingItem.quantity} dikeranjang`
+              });
+           
         } else {
             // Add item to cart
+
             cartItems.push({ name, price, quantity, image });
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.onmouseenter = Swal.stopTimer;
+                  toast.onmouseleave = Swal.resumeTimer;
+                }
+              });
+              Toast.fire({
+                icon: "success",
+                title: `${name} telah ditambahkan ke keranjang.`
+              });
         }
 
-        // Redirect to cart page
-        window.location.href = 'keranjang.html';
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+
     }
 });

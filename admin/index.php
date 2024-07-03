@@ -1,3 +1,7 @@
+<?php 
+include '../connection/connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +21,10 @@
 
     <!-- Custom styles for this template-->
     <link href="../asset/css/sb-admin-2.min.css" rel="stylesheet">
+
+     <!-- Custom styles for this page -->
+     <link href="../asset/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -72,6 +80,11 @@
                     <span>Produk</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?halaman=logout">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Pelanggan</span></a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="index.php?halaman=logout">
@@ -135,16 +148,25 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">
                         <?php
                             if(isset($_GET['halaman'])){
-
+                                if($_GET['halaman'] == "kategori"){
+                                    include 'kategori.php';
+                                }
+                                elseif($_GET['halaman'] == "produk"){
+                                    include 'produk.php';
+                                }
+                                elseif($_GET['halaman'] == "pembelian"){
+                                    include 'pembelian.php';
+                                }
+                                elseif($_GET['halaman'] == "pelanggan"){
+                                    include 'pelanggan.php';
+                                }
                             }else{
                                 include 'dashboard.php';
                             }
                             
                         ?>
-                    </h1>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -203,6 +225,12 @@
     <!-- Custom scripts for all pages-->
     <script src="../asset/js/sb-admin-2.min.js"></script>
 
-</body>
+    <!-- Page level plugins -->
+    <script src="../asset/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
+    <!-- Page level custom scripts -->
+    <script src="../asset/js/demo/datatables-demo.js"></script>
+
+</body>
 </html>
