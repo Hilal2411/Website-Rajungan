@@ -1,12 +1,36 @@
 <?php 
-include '../connection/connection.php';
+    session_start();
+    include '../connection/connection.php';
+
+
+    if(!isset($_SESSION['admin']))
+    {
+    echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+    echo "<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                position: 'center',
+                icon: 'warning',
+                title: 'Silahkan Login Terlebih Dahulu!!',
+                showConfirmButton: false,
+                timer: 1000,
+                width: '400px', // ukuran diperkecil
+                padding: '1rem', // padding diperkecil
+                customClass: {
+                    popup: 'small-swal-popup' // kelas khusus untuk styling
+                }
+            }).then(() => {
+                window.location.href = '../login.php';
+            });
+        });
+    </script>";
+    exit();
+    }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,6 +48,11 @@ include '../connection/connection.php';
 
      <!-- Custom styles for this page -->
      <link href="../asset/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+     <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+     
 
 
 </head>
@@ -49,7 +78,7 @@ include '../connection/connection.php';
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php?halaman=dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -81,15 +110,16 @@ include '../connection/connection.php';
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="index.php?halaman=logout">
+                <a class="nav-link" href="index.php?halaman=pelanggan">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Pelanggan</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="index.php?halaman=logout">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Logout</span></a>
+            <a id="logout-link" class="nav-link" href="index.php?halaman=logout">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Logout</span>
+             </a>
             </li>
 
     
@@ -148,25 +178,48 @@ include '../connection/connection.php';
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                        <?php
-                            if(isset($_GET['halaman'])){
-                                if($_GET['halaman'] == "kategori"){
+                    <?php
+                            if (isset($_GET['halaman'])) {
+                                // Halaman Kategori
+                                if ($_GET['halaman'] == "kategori") {
                                     include 'kategori.php';
                                 }
-                                elseif($_GET['halaman'] == "produk"){
+                                elseif($_GET['halaman']=="tambah_kategori")
+                                {
+                                    include 'tambah_produk/tambah_kategori.php';
+                                }
+                                elseif ($_GET['halaman'] == "dashboard") {
+                                    include 'dashboard.php';
+                                }
+                                // Halaman Produk
+                                elseif ($_GET['halaman'] == "produk") {
                                     include 'produk.php';
                                 }
-                                elseif($_GET['halaman'] == "pembelian"){
+                                // Halaman Pembelian
+                                elseif ($_GET['halaman'] == "pembelian") {
                                     include 'pembelian.php';
                                 }
-                                elseif($_GET['halaman'] == "pelanggan"){
+                                // Halaman Detail Pembelian
+                                elseif ($_GET['halaman'] == "detail_pembelian") {
+                                    include 'detail/detail_pembelian.php';
+                                }
+
+                                elseif($_GET['halaman'] == "logout")
+                                {
+                                    include 'logout.php';
+
+                                    if(isset($_POST['logout'])) {
+                                    }
+                                }
+
+                                // Halaman Pelanggan
+                                elseif ($_GET['halaman'] == "pelanggan") {
                                     include 'pelanggan.php';
                                 }
-                            }else{
+                            }else {
                                 include 'dashboard.php';
                             }
-                            
-                        ?>
+                    ?>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -208,7 +261,7 @@ include '../connection/connection.php';
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button method="post" class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
@@ -231,6 +284,9 @@ include '../connection/connection.php';
 
     <!-- Page level custom scripts -->
     <script src="../asset/js/demo/datatables-demo.js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
 
 </body>
 </html>

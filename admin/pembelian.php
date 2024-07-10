@@ -6,7 +6,6 @@
 
 $pembelian = array();
 $ambil = $connection->query("SELECT * FROM pembelian JOIN pelanggan ON pembelian.id_pelanggan=pelanggan.id_pelanggan");
-
 while($pecah = $ambil->fetch_assoc())
 {
     $pembelian[] = $pecah;
@@ -29,14 +28,14 @@ while($pecah = $ambil->fetch_assoc())
         <tbody>
             <?php foreach ($pembelian as $key => $value):?>
                 <tr>
-                    <th width="50"><?php echo $key+1; ?></th>
-                    <th><?php echo $value['nama_pelanggan']; ?></th>
-                    <th><?php echo date("d F Y", strtotime($value['tanggal_pembelian'])); ?></th>
-                    <th>Rp<?php echo number_format($value['total_pembelian']); ?></th>
-                    <th class="text-center" width="150">
-                        <a href="#" class="btn btn-sm btn-info">Detail</a>
+                    <td width="50"><?php echo $key+1; ?></td>
+                    <td><?php echo $value['nama_pelanggan']; ?></td>
+                    <td><?php echo date("d F Y", strtotime($value['tanggal_pembelian'])); ?></td>
+                    <td>Rp<?php echo number_format($value['total_pembelian']); ?></td>
+                    <td class="text-center" width="150">
+                        <a href="index.php?halaman=detail_pembelian&id=<?php echo $value['id_pembelian']; ?>" class="btn btn-sm btn-info">Detail</a>
                         
-                    </th>
+                    </td>
                 </tr>
             <?php endforeach ?>
         </tbody>

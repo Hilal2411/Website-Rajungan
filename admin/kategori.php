@@ -4,16 +4,18 @@
 
 <?php
 
-$kategori = array();
-$ambil = $connection->query("SELECT * FROM kategori");
-while($pecah = $ambil->fetch_assoc() )
-{
-    $kategori[] = $pecah;
-}
+    $kategori = array();
+    $ambil = $connection->query("SELECT * FROM kategori");
+    while($pecah = $ambil->fetch_assoc() )
+    {
+        $kategori[] = $pecah;
+    }
 
 ?>
 
-<div class="card shadow bg-white">
+<a href="index.php?halaman=tambah_kategori" class="btn btn-sm btn-success">Tambah Produk</a>
+
+<div class="card shadow bg-white mt-3">
     <div class="card-body">
         <table class="table table-bordered table-hover table-striped" id="tables">
             <thead>
