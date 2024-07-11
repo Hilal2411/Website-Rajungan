@@ -72,6 +72,7 @@
                       <i class="bi bi-star-fill"></i>
                       <i class="bi bi-star-fill"></i>
                   </div>
+                  <span>Stok Produk : 5</span>
                   <h4>Rp. 100.000,-</h4>
               </div>
               <button class="add-to-cart">
@@ -91,6 +92,7 @@
                       <i class="bi bi-star-fill"></i>
                       <i class="bi bi-star-fill"></i>
                   </div>
+                  <span>Stok Produk : 5</span>
                   <h4>Rp. 60.000,-</h4>
               </div>
               <button class="add-to-cart">
@@ -110,6 +112,7 @@
                       <i class="bi bi-star-fill"></i>
                       <i class="bi bi-star-fill"></i>
                   </div>
+                  <span>Stok Produk : 5</span>
                   <h4>Rp. 50.000,-</h4>
               </div>
               <button class="add-to-cart">

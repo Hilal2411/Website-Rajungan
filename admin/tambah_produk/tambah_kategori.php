@@ -27,3 +27,33 @@
         </div>
     </div>
 </form>
+
+<?php
+if(isset($_POST['simpan']))
+    {
+        $nama = $_POST['nama'];
+
+        // menyimpan data
+        $connection->query("INSERT INTO kategori (nama_kategori) VALUES ('$nama')");
+
+        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+        echo "<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Data Berhasil Disimpan',
+            showConfirmButton: false,
+            timer: 1000,
+            width: '500px', // ukuran diperkecil
+            padding: '1rem', // padding diperkecil
+            customClass: {
+                popup: 'small-swal-popup' // kelas khusus untuk styling
+        }
+        }).then(() => {
+        window.location.href = 'index.php?halaman=kategori';
+        });
+    });
+</script>";
+    }
+?>

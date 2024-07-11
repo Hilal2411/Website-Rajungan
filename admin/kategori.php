@@ -13,7 +13,7 @@
 
 ?>
 
-<a href="index.php?halaman=tambah_kategori" class="btn btn-sm btn-success">Tambah Produk</a>
+<a href="index.php?halaman=tambah_kategori" class="btn btn-sm btn-success">Tambah Kategori</a>
 
 <div class="card shadow bg-white mt-3">
     <div class="card-body">

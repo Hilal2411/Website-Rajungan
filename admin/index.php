@@ -13,8 +13,8 @@
                 icon: 'warning',
                 title: 'Silahkan Login Terlebih Dahulu!!',
                 showConfirmButton: false,
-                timer: 1000,
-                width: '400px', // ukuran diperkecil
+                timer: 1500,
+                width: '500px', // ukuran diperkecil
                 padding: '1rem', // padding diperkecil
                 customClass: {
                     popup: 'small-swal-popup' // kelas khusus untuk styling
@@ -195,6 +195,10 @@
                                 elseif ($_GET['halaman'] == "produk") {
                                     include 'produk.php';
                                 }
+                                elseif($_GET['halaman']== "tambah_produk"){
+                                    include 'tambah_produk/tambah_produk.php';
+                                }
+
                                 // Halaman Pembelian
                                 elseif ($_GET['halaman'] == "pembelian") {
                                     include 'pembelian.php';
@@ -287,6 +291,15 @@
 
     <!-- SweetAlert2 -->
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".btn-tambah").on("click", function(){
+                $(".input-foto").append("<input type='file' name='foto[]' class='form-control'>")
+            })
+        })
+
+    </script>
 
 </body>
 </html>

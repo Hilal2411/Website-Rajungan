@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         title: 'Anda Berhasil Logout!!!',
         showConfirmButton: false,
         timer: 1000,
-        width: '400px', // ukuran diperkecil
+        width: '500px', // ukuran diperkecil
         padding: '1rem', // padding diperkecil
         customClass: {
             popup: 'small-swal-popup' // kelas khusus untuk styling
