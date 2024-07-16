@@ -179,52 +179,49 @@
 
                     <!-- Page Heading -->
                     <?php
-                            if (isset($_GET['halaman'])) {
-                                // Halaman Kategori
-                                if ($_GET['halaman'] == "kategori") {
-                                    include 'kategori.php';
-                                }
-                                elseif($_GET['halaman']=="tambah_kategori")
-                                {
-                                    include 'tambah_produk/tambah_kategori.php';
-                                }
-                                elseif ($_GET['halaman'] == "dashboard") {
-                                    include 'dashboard.php';
-                                }
-                                // Halaman Produk
-                                elseif ($_GET['halaman'] == "produk") {
-                                    include 'produk.php';
-                                }
-                                elseif($_GET['halaman']== "tambah_produk"){
-                                    include 'tambah_produk/tambah_produk.php';
-                                }
-
-                                // Halaman Pembelian
-                                elseif ($_GET['halaman'] == "pembelian") {
-                                    include 'pembelian.php';
-                                }
-                                // Halaman Detail Pembelian
-                                elseif ($_GET['halaman'] == "detail_pembelian") {
-                                    include 'detail/detail_pembelian.php';
-                                }
-
-                                elseif($_GET['halaman'] == "logout")
-                                {
-                                    include 'logout.php';
-
-                                    if(isset($_POST['logout'])) {
-                                    }
-                                }
-
-                                // Halaman Pelanggan
-                                elseif ($_GET['halaman'] == "pelanggan") {
-                                    include 'pelanggan.php';
-                                }
-                            }else {
+                        if (isset($_GET['halaman'])) {
+                            // Halaman Kategori
+                            if ($_GET['halaman'] == "kategori") {
+                                include 'kategori.php';
+                            }
+                            elseif($_GET['halaman']=="tambah_kategori") {
+                                include 'tambah_produk/tambah_kategori.php';
+                            }
+                            elseif ($_GET['halaman'] == "dashboard") {
                                 include 'dashboard.php';
                             }
+                            // Halaman Produk
+                            elseif ($_GET['halaman'] == "produk") {
+                                include 'produk.php';
+                            }
+                            elseif($_GET['halaman']== "tambah_produk") {
+                                include 'tambah_produk/tambah_produk.php';
+                            }
+                            elseif($_GET['halaman']=="detail_produk") {  // Perbaiki di sini
+                                include 'detail/detail_produk.php';
+                            }
+                            // Halaman Pembelian
+                            elseif ($_GET['halaman'] == "pembelian") {
+                                include 'pembelian.php';
+                            }
+                            // Halaman Detail Pembelian
+                            elseif ($_GET['halaman'] == "detail_pembelian") {
+                                include 'detail/detail_pembelian.php';
+                            }
+                            elseif($_GET['halaman'] == "logout") {
+                                include 'logout.php';
+                                if(isset($_POST['logout'])) {
+                                    // kode untuk logout
+                                }
+                            }
+                            // Halaman Pelanggan
+                            elseif ($_GET['halaman'] == "pelanggan") {
+                                include 'pelanggan.php';
+                            }
+                        } else {
+                            include 'dashboard.php';
+                        }
                     ?>
-
                 </div>
                 <!-- /.container-fluid -->
 

@@ -26,8 +26,8 @@
           <ul id="navbar">
             <li><a class="active"  href="#hero">Beranda</a></li>
             <li><a href="#product1">Produk</a></li>
-            <li><a href="#carousel">Article</a></li>
-            <li><a href="#kontak">Contact</a></li>
+            <li><a href="#carousel">Artikel</a></li>
+            <li><a href="#kontak">Kontak</a></li>
             <a href="#" id="close"><i class="fa fa-times"></i></a>
             <li>
               <a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a>
@@ -46,19 +46,19 @@
 
     <section id="hero">
         <div class="container text-center">
-            <h4>Rajungan Seafood</h4>
-            <h2>Super value deals</h2>
-            <h1>On all products</h1>
+            <h1>Rajungan Seafood</h1>
+            <h2>Spesialis Seafood</h2>
+            <h4>Kualitas dan Manfaat Tetap Terjaga</h4>
             <p>Rasakan Kelezatan Laut dengan Rajungan Kami! Dapatkan Sensasi Kenikmatan Tiada Tanding dari Daging Rajungan Berkualitas Tinggi. Dicari oleh Penikmat Kuliner Sejati, Produk Kami Menawarkan Kesegaran, Kelezatan, dan Kesehatan dalam Setiap Gigitannya. Segera Hadirkan Hidangan Spesial Ini di Meja Makan Anda dan Rasakan Perbedaannya!</p>
-            <a href="#product1" onclick="scrollToProduct()" class="shop-now btn btn-primary">Shop Now</a>
+            <a href="#product1" onclick="scrollToProduct()" class="shop-now btn btn-primary">Pesan Sekarang</a>
         </div>
     </section>
   
 
     <!-- Produk -->
     <section id="product1" class="section-p1">
-      <h2>Produk</h2>
-      <p>Berbagai jenis daging yang kami tawarkan</p>
+      <h1>Produk</h1>
+      <h4>Berbagai jenis daging yang kami tawarkan</h4>
       <div class="pro-container">
           <div class="pro" data-name="Daging Jumbo" data-price="100000" data-image="./asset/img/jumbo.jpg">
               <img src="./asset/img/jumbo.jpg" alt="" />
@@ -75,7 +75,7 @@
                   <span>Stok Produk : 5</span>
                   <h4>Rp. 100.000,-</h4>
               </div>
-              <button class="add-to-cart">
+              <button class="add-to-cart" style="text-decoration:none;">
                   <i class="bi bi-cart cart"></i>
               </button>
           </div>
@@ -133,14 +133,14 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="./asset/img/capit kepiting.webp" class="d-block w-50" alt="...">
+                <img src="./asset/img/rajungan.webp" class="d-block w-50" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Rajungan</h5>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="./asset/img/capit kepiting.webp" class="d-block w-50" alt="...">
-              <div class="carousel-caption d-none d-md-block">
+              <img src="./asset/img/kepiting.png" class="d-block w-50" alt="...">
+              <div class="carousel-caption d-none d-md-block ">
                 <h5>Kepiting</h5>
               </div>
             </div>
@@ -156,22 +156,13 @@
         </div>
     
     </section>
-    
 
     <section id="about-head" class="section-p1">
       <img src="img/about/a6.jpg" alt="" />
       <div>
         <h2>Rajungan</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-          delectus eos aliquam adipisci nobis dolor molestiae quasi id nostrum
-          consequatur dolores recusandae at, mollitia sint laudantium quam odio,
-          placeat libero enim quia officia ipsa ipsam, cumque cum. Fugit nam
-          quos quam cupiditate corrupti odio optio voluptate accusantium
-          reprehenderit atque labore, fuga a numquam, iste magni nostrum minus
-          necessitatibus ratione enim non quo iusto eveniet ex! Necessitatibus
-          aspernatur sunt aut velit, odio, porro suscipit corrupti quasi natus
-          eveniet dolore quae debitis neque ut aperiam a veniam!
+        Rajungan memiliki warna biru dengan corak bentol-bentol yang khas. Rajungan betina berwarna kehijauan dengan bercak putih, sementara jantannya berwarna kebiruan dengan bercak putih terang. Capit rajungan panjang dan bentuknya pipih, dengan cangkang yang lebih tipis dibandingkan kepiting. Rajungan hidup di laut dan akan mati jika diangkat dari air. Meski dagingnya lebih sedikit, rasa daging rajungan lebih manis, gurih, dan empuk. Rajungan memiliki kandungan gizi yang tinggi, dengan kadar protein yang tinggi namun rendah lemak dan kolesterol, menjadikannya pilihan yang lebih sehat.
         </p>
       </div>
     </section>
@@ -182,16 +173,10 @@
       <div>
         <h2>Kepiting</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-          delectus eos aliquam adipisci nobis dolor molestiae quasi id nostrum
-          consequatur dolores recusandae at, mollitia sint laudantium quam odio,
-          placeat libero enim quia officia ipsa ipsam, cumque cum. Fugit nam
-          quos quam cupiditate corrupti odio optio voluptate accusantium
-          reprehenderit atque labore, fuga a numquam, iste magni nostrum minus
-          necessitatibus ratione enim non quo iusto eveniet ex! Necessitatibus
-          aspernatur sunt aut velit, odio, porro suscipit corrupti quasi natus
-          eveniet dolore quae debitis neque ut aperiam a veniam!
+        Kepiting umumnya berwarna coklat kehitaman atau hijau kehitaman dan memiliki capit yang berukuran besar. Bentuk tubuhnya terlihat lebih kokoh dengan cangkang yang keras dan tebal. Habitatnya biasanya berada di tambak atau rawa, sehingga ketahanannya lebih baik ketika diangkat dari air. Kepiting juga memiliki jumlah daging yang lebih banyak dibandingkan dengan rajungan. Dari segi kandungan gizi, kepiting kaya akan vitamin B, vitamin E, mangan, fosfor, yodium, dan zinc, namun kandungan lemaknya lebih tinggi.
         </p>
+
+
         <marquee bgcolor="#ccc" loop="-1" scrollamount="5" width="100%"
           >"Rasakan kesegaran dan kelezatan rajungan terbaik! Pesan sekarang dan nikmati sajian istimewa yang siap memanjakan lidah Anda. Dapatkan penawaran spesial hari ini!"</marquee
         >
@@ -222,26 +207,26 @@
   
    </section>
     <section>
-      <h1 style="text-align: center;" id="kontak">Contact Us</h1>
+      <h1 style="text-align: center;" id="kontak">Hubungi Kami</h1>
       <div class="container">
           <div class="row">
               <div class="col-md-6">
                   <form id="request" class="main_form">
                       <div class="row">
                           <div class="col-md-12">
-                              <input class="contactus" placeholder="Name" type="text" name="Name"> 
+                              <input class="contactus" placeholder="Nama" type="text" name="Name"> 
                           </div>
                           <div class="col-md-12">
                               <input class="contactus" placeholder="Email" type="email" name="Email"> 
                           </div>
                           <div class="col-md-12">
-                              <input class="contactus" placeholder="Phone Number" type="text" name="Phone Number">                          
+                              <input class="contactus" placeholder="No Handphone" type="text" name="Phone Number">                          
                           </div>
                           <div class="col-md-12">
-                              <textarea class="textarea" placeholder="Message" name="Message"></textarea>
+                              <textarea class="textarea" placeholder="Pesan" name="Message"></textarea>
                           </div>
                           <div class="col-md-12">
-                              <button class="send_btn">Send</button>
+                              <button class="send_btn">Kirim</button>
                           </div>
                       </div>
                   </form>
@@ -259,37 +244,37 @@
 
   <!-- Footer -->
   <footer>
-      <div class="footer-container">
-          <div class="footer-column">
-              <h2>Produk Daging</h2>
-              <p>Rajungan Jumbo</p>
-              <p>Capit Rajungan</p>
-              <p>Capit Kepiting</p>
-          </div>
-          <div class="footer-column">
-              <h2>Kualitas</h2>
-              
-              
-          </div>
-          <div class="footer-column">
-              <h2>Tentang Kami</h2>
-              <p>KP Kramat, Desa Sukawali, RT 001 RW 005, Kec. Pakuhaji, Kab. Tangerang</p>
-              <p>Blog</p>
-              
-          </div>
-      </div>
-      <div class="footer-bottom">
-          <p style="text-align: center;">© Wisr 2021</p>
-          <div class="footer-links">
-              
-          </div>
-          <div class="footer-social">
-              <a href="#"><i class="bi bi-instagram"></i></a>
-              <a href="#"><i class="bi bi-facebook"></i></a>
-              <a href="#"><i class="bi bi-whatsapp"></i></a>
-          </div>
-      </div>
-  </footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h2>Produk Daging</h2>
+            <p>Rajungan Jumbo</p>
+            <p>Capit Rajungan</p>
+            <p>Capit Kepiting</p>
+        </div>
+        <div class="footer-column">
+            <h2>Jelajahi </h2>
+            <p><a style="text-decoration:none" href="#hero">Beranda</a></p>
+            <p><a style="text-decoration:none" href="#product1">Produk</a></p>
+            <p><a style="text-decoration:none" href="#carousel">Artikel</a></p>
+            <p><a style="text-decoration:none" href="#kontak">Kontak</a></p>
+        </div>
+        <div class="footer-column">
+            <h2>Tentang Kami</h2>
+            <p>KP Kramat, Desa Sukawali, RT 001 RW 005, Kec. Pakuhaji, Kab. Tangerang</p>
+            <p>Blog</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p style="text-align: center;">© Wisr 2021</p>
+        <div class="footer-links">
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+    </div>
+</footer>
 
 
     <script

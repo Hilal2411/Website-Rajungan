@@ -3,6 +3,7 @@
 </div>
 
 
+
 <?php 
 
 $kategori = array();
@@ -12,6 +13,7 @@ while($pecah = $ambil->fetch_assoc())
 {
     $kategori[]=$pecah;
 }
+
 
 ?>
 
