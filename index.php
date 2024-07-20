@@ -20,7 +20,7 @@
     
   </head>
   <body>
-    <section id="header">
+   <section id="header">
       <a href="#"><img src="" class="logo" alt="" /></a>
         <div>
           <ul id="navbar">
@@ -44,6 +44,32 @@
       </div>
     </section>
 
+    <!-- Content of the page -->
+
+    <script>
+        function checkLogin() {
+            const isLoggedIn = <?php echo json_encode($is_logged_in); ?>;
+            if (isLoggedIn) {
+                window.location.href = 'keranjang.php';
+            } else {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Silahkan Login Terlebih Dahulu!!',
+                    showConfirmButton: false,
+                    timer: 1500,
+                    width: '500px',
+                    padding: '1rem',
+                    customClass: {
+                        popup: 'small-swal-popup'
+                    }
+                }).then(() => {
+                    window.location.href = 'login.php';
+                });
+            }
+        }
+    </script>
+
     <section id="hero">
         <div class="container text-center">
             <h1>Rajungan Seafood</h1>
@@ -53,10 +79,48 @@
             <a href="#product1" onclick="scrollToProduct()" class="shop-now btn btn-primary">Pesan Sekarang</a>
         </div>
     </section>
-  
+    
+    <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "web_rajungan";
+
+// Membuat koneksi
+$connection = new mysqli($servername, $username, $password, $dbname);
+
+// Memeriksa koneksi
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
+
+// Array id_produk yang ingin ditampilkan
+$id_produk_list = [1, 2, 3]; // Sesuaikan dengan id_produk Anda
+
+// Mengambil data stok produk berdasarkan id_produk
+$produk_stok = array();
+foreach ($id_produk_list as $id_produk) {
+    $sql = "SELECT id_produk, stok_produk FROM produk WHERE id_produk = ?";
+    $stmt = $connection->prepare($sql);
+    $stmt->bind_param("i", $id_produk);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $produk_stok[$id_produk] = $result->fetch_assoc();
+    } else {
+        $produk_stok[$id_produk] = array("id_produk" => $id_produk, "stok_produk" => "Stok produk tidak tersedia");
+    }
+
+    $stmt->close();
+}
+
+// Menutup koneksi
+$connection->close();
+?>
 
     <!-- Produk -->
-    <section id="product1" class="section-p1">
+    <section method="GET" id="product1" class="section-p1" action="index.php">
       <h1>Produk</h1>
       <h4>Berbagai jenis daging yang kami tawarkan</h4>
       <div class="pro-container">
@@ -72,7 +136,7 @@
                       <i class="bi bi-star-fill"></i>
                       <i class="bi bi-star-fill"></i>
                   </div>
-                  <span>Stok Produk : 5</span>
+                  <span>Stok Produk: <?php echo htmlspecialchars($produk_stok[1]['stok_produk']); ?></span>
                   <h4>Rp. 100.000,-</h4>
               </div>
               <button class="add-to-cart" style="text-decoration:none;">
@@ -92,7 +156,7 @@
                       <i class="bi bi-star-fill"></i>
                       <i class="bi bi-star-fill"></i>
                   </div>
-                  <span>Stok Produk : 5</span>
+                  <span>Stok Produk: <?php echo htmlspecialchars($produk_stok[2]['stok_produk']); ?></span>
                   <h4>Rp. 60.000,-</h4>
               </div>
               <button class="add-to-cart">
@@ -112,7 +176,7 @@
                       <i class="bi bi-star-fill"></i>
                       <i class="bi bi-star-fill"></i>
                   </div>
-                  <span>Stok Produk : 5</span>
+                  <span>Stok Produk: <?php echo htmlspecialchars($produk_stok[3]['stok_produk']); ?></span>
                   <h4>Rp. 50.000,-</h4>
               </div>
               <button class="add-to-cart">
@@ -265,7 +329,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p style="text-align: center;">© Wisr 2021</p>
+        <p style="text-align: center;">©Website Rajungan 2024</p>
         <div class="footer-links">
         </div>
         <div class="footer-social">

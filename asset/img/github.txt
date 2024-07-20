@@ -1,0 +1,10 @@
+Gunakan git pull dengan opsi --allow-unrelated-histories:
+
+bash
+Salin kode
+git pull origin main --allow-unrelated-histories
+
+Langkah 1: Tarik Perubahan dari Remote Repository
+bash
+Salin kode
+git pull origin main

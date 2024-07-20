@@ -1,10 +1,9 @@
 <?php 
-    session_start();
-    include '../connection/connection.php';
+session_start();
+include '../connection/connection.php';
 
-
-    if(!isset($_SESSION['admin']))
-    {
+// Pengecekan apakah user sudah login atau belum
+if(!isset($_SESSION['id_role'])) {
     echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
     echo "<script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -25,7 +24,7 @@
         });
     </script>";
     exit();
-    }
+}
 ?>
 
 <!DOCTYPE html>

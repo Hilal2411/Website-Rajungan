@@ -119,29 +119,50 @@ if (isset($_POST['simpan'])) {
     print_r($_FILES);
     echo "</pre>";
 
+    // Debugging untuk melihat isi $_POST
+    echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
+
+    // Debugging untuk melihat isi variabel $nama_foto dan $lokasi_foto
+    echo "<pre>";
+    echo "Nama Foto:<br>";
+    print_r($nama_foto);
+    echo "Lokasi Foto:<br>";
+    print_r($lokasi_foto);
+    echo "Error Foto:<br>";
+    print_r($error_foto);
+    echo "</pre>";
+
     // Upload file utama
     if ($error_foto[0] === UPLOAD_ERR_OK) {
         if (move_uploaded_file($lokasi_foto[0], $uploadDir . $nama_foto[0])) {
             // Masukkan data produk ke database
-            $connection->query("INSERT INTO produk (id_kategori, nama_produk, harga_produk, berat_produk, foto_produk, stok_produk) 
-            VALUES ('$id_kategori', '$nama', '$harga', '$berat', '$nama_foto[0]', '$stok')");
+            $query_produk = "INSERT INTO produk (id_kategori, nama_produk, harga_produk, berat_produk, foto_produk, stok_produk) 
+            VALUES ('$id_kategori', '$nama', '$harga', '$berat', '$nama_foto[0]', '$stok')";
+            if ($connection->query($query_produk) === TRUE) {
+                $id_baru = $connection->insert_id;
 
-            $id_baru = $connection->insert_id;
-
-            // Upload setiap foto tambahan
-            foreach ($nama_foto as $key => $tiap_nama) {
-                if ($key == 0) continue; // Skip the main photo
-
-                if ($error_foto[$key] === UPLOAD_ERR_OK) {
-                    $tiap_lokasi = $lokasi_foto[$key];
-                    if (move_uploaded_file($tiap_lokasi, $uploadDir . $tiap_nama)) {
-                        $connection->query("INSERT INTO produk_foto(id_produk, nama_produk_foto) VALUES ('$id_baru', '$tiap_nama')");
+                // Upload setiap foto tambahan
+                for ($i = 1; $i < count($nama_foto); $i++) {
+                    if ($error_foto[$i] === UPLOAD_ERR_OK) {
+                        if (move_uploaded_file($lokasi_foto[$i], $uploadDir . $nama_foto[$i])) {
+                            $query_foto = "INSERT INTO produk_foto (id_produk, nama_produk_foto) VALUES ('$id_baru', '" . $connection->real_escape_string($nama_foto[$i]) . "')";
+                            echo "Executing query: $query_foto<br>"; // Debugging query
+                            if ($connection->query($query_foto) === TRUE) {
+                                echo "Foto tambahan berhasil diupload: $nama_foto[$i]<br>";
+                            } else {
+                                echo "Error inserting additional photo into database: " . $connection->error . "<br>";
+                            }
+                        } else {
+                            echo "Gagal mengupload foto tambahan: $nama_foto[$i].<br>";
+                        }
                     } else {
-                        echo "Gagal mengupload foto tambahan: $tiap_nama.<br>";
+                        echo "Error uploading additional photo $nama_foto[$i]: " . $error_foto[$i] . "<br>";
                     }
-                } else {
-                    echo "Error uploading additional photo $tiap_nama: " . $error_foto[$key] . "<br>";
                 }
+            } else {
+                echo "Error inserting product into database: " . $connection->error . "<br>";
             }
         } else {
             echo "Gagal mengupload foto utama.";
@@ -150,3 +171,4 @@ if (isset($_POST['simpan'])) {
         echo "Error uploading main photo: " . $error_foto[0];
     }
 }
+?>
