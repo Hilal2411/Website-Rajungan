@@ -114,26 +114,6 @@ if (isset($_POST['simpan'])) {
         mkdir($uploadDir, 0777, true);
     }
 
-    // Debugging untuk melihat isi $_FILES
-    echo "<pre>";
-    print_r($_FILES);
-    echo "</pre>";
-
-    // Debugging untuk melihat isi $_POST
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-
-    // Debugging untuk melihat isi variabel $nama_foto dan $lokasi_foto
-    echo "<pre>";
-    echo "Nama Foto:<br>";
-    print_r($nama_foto);
-    echo "Lokasi Foto:<br>";
-    print_r($lokasi_foto);
-    echo "Error Foto:<br>";
-    print_r($error_foto);
-    echo "</pre>";
-
     // Upload file utama
     if ($error_foto[0] === UPLOAD_ERR_OK) {
         if (move_uploaded_file($lokasi_foto[0], $uploadDir . $nama_foto[0])) {
@@ -148,19 +128,24 @@ if (isset($_POST['simpan'])) {
                     if ($error_foto[$i] === UPLOAD_ERR_OK) {
                         if (move_uploaded_file($lokasi_foto[$i], $uploadDir . $nama_foto[$i])) {
                             $query_foto = "INSERT INTO produk_foto (id_produk, nama_produk_foto) VALUES ('$id_baru', '" . $connection->real_escape_string($nama_foto[$i]) . "')";
-                            echo "Executing query: $query_foto<br>"; // Debugging query
-                            if ($connection->query($query_foto) === TRUE) {
-                                echo "Foto tambahan berhasil diupload: $nama_foto[$i]<br>";
-                            } else {
-                                echo "Error inserting additional photo into database: " . $connection->error . "<br>";
-                            }
-                        } else {
-                            echo "Gagal mengupload foto tambahan: $nama_foto[$i].<br>";
+                            $connection->query($query_foto);
                         }
-                    } else {
-                        echo "Error uploading additional photo $nama_foto[$i]: " . $error_foto[$i] . "<br>";
                     }
                 }
+                
+                // Menampilkan alert sukses menggunakan SweetAlert
+                echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+                echo "<script>
+                        Swal.fire({
+                          position: 'center',
+                          icon: 'success',
+                          title: 'Foto Anda berhasil disimpan',
+                          showConfirmButton: false,
+                          timer: 1500
+                        }).then(() => {
+                          window.location.href = 'index.php?halaman=detail_produk&id=$id_baru';
+                        });
+                      </script>";
             } else {
                 echo "Error inserting product into database: " . $connection->error . "<br>";
             }
@@ -172,3 +157,4 @@ if (isset($_POST['simpan'])) {
     }
 }
 ?>
+

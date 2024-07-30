@@ -44,8 +44,8 @@ while($pecah = $ambil->fetch_assoc())
                         <img width="100" src="<?php echo $imagePath; ?>" alt="">
                 </td>
                 <td class="text-center" width="200">
-                    <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                    <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                    <a href="index.php?halaman=edit_produk&id=<?php echo $value['id_produk']?>" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="index.php?halaman=hapus_produk&id=<?php echo $value['id_produk'];?>" class="btn btn-sm btn-danger">Hapus</a>
                     <a href="index.php?halaman=detail_produk&id=<?php echo $value['id_produk']?>"class="btn btn-sm btn-info">Detail</a>
                 </td>
             </tr>

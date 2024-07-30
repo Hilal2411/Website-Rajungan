@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutButton = document.getElementById('openModalBtn');
     const modal = document.getElementById('checkoutModal');
     const span = document.getElementsByClassName('close')[0];
+    const totalHargaInput = document.getElementById('total_harga'); // Get the hidden input for total price
 
     let cart = [];
 
@@ -42,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         cartTotal.textContent = `Total: Rp${total.toLocaleString()}`;
         document.getElementById('cart-total-modal').textContent = `Total: Rp${total.toLocaleString()}`;
-        localStorage.setItem('totalPrice', total); // Store total price in localStorage
+        totalHargaInput.value = total; // Set the total price in the hidden input
+        saveCartToLocalStorage();
         addEventListeners();
     }
 

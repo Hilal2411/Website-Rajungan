@@ -20,7 +20,6 @@ while($pecah = $ambil->fetch_assoc())
                     <th>No</th>
                     <th>Nama Pelanggan</th>
                     <th>Tanggal</th>
-                    <th>Total</th>
                     <th>Opsi</th>
                     
                </tr>
@@ -31,7 +30,7 @@ while($pecah = $ambil->fetch_assoc())
                     <td width="50"><?php echo $key+1; ?></td>
                     <td><?php echo $value['nama_pelanggan']; ?></td>
                     <td><?php echo date("d F Y", strtotime($value['tanggal_pembelian'])); ?></td>
-                    <td>Rp<?php echo number_format($value['total_pembelian']); ?></td>
+                    
                     <td class="text-center" width="150">
                         <a href="index.php?halaman=detail_pembelian&id=<?php echo $value['id_pembelian']; ?>" class="btn btn-sm btn-info">Detail</a>
                         

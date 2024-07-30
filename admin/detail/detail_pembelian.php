@@ -41,8 +41,8 @@
             <label class="col-md-4 col-form-label">Telepon :</label>
             <label class="col-md-8 col-form-label"><?php echo $detail['telepon_pelanggan']?></label>
 
-            <label class="col-md-4 col-form-label">Foto :</label>
-            <label class="col-md-8 col-form-label"><?php echo $detail['foto_pelanggan']?></label>
+            <label class="col-md-4 col-form-label">Alamat :</label>
+            <label class="col-md-8 col-form-label"><?php echo $detail['alamat_pelanggan']?></label>
             </div>
         </div>
     </div>
@@ -59,7 +59,7 @@
 
             <!-- Total -->
             <label class="col-md-4 col-form-label">Total :</label>
-            <label class="col-md-8 col-form-label">Rp. <?php echo number_format($detail['total_pembelian'])?></label>
+            <label class="col-md-8 col-form-label">Rp. <?php echo number_format($detail['total_harga'])?></label>
             </div>
             </div>
             </div>

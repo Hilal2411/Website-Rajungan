@@ -189,6 +189,17 @@ if(!isset($_SESSION['id_role'])) {
                             elseif ($_GET['halaman'] == "dashboard") {
                                 include 'dashboard.php';
                             }
+                            elseif($_GET['halaman'] =="edit_kategori")
+                            {
+                                include 'edit/edit_kategori.php';
+                            }
+                            elseif($_GET['halaman']=="hapus_kategori")
+                            {
+                                include 'hapus/hapus_kategori.php';
+                            }
+
+
+
                             // Halaman Produk
                             elseif ($_GET['halaman'] == "produk") {
                                 include 'produk.php';
@@ -199,6 +210,22 @@ if(!isset($_SESSION['id_role'])) {
                             elseif($_GET['halaman']=="detail_produk") {  // Perbaiki di sini
                                 include 'detail/detail_produk.php';
                             }
+                            elseif($_GET['halaman']=="hapus_foto"){
+                                include 'hapus/hapus_foto.php';
+                            }
+                            elseif($_GET['halaman']=="edit_produk")
+                            {
+                                include 'edit/edit_produk.php';
+                            }
+                            elseif($_GET['halaman']=="hapus_produk")
+                            {
+                                include 'hapus/hapus_produk.php';
+                            }
+
+
+
+
+
                             // Halaman Pembelian
                             elseif ($_GET['halaman'] == "pembelian") {
                                 include 'pembelian.php';

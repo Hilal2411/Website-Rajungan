@@ -31,8 +31,8 @@
                     <td width="50"><?php echo $key+1; ?></td>
                     <td ><?php echo $value['nama_kategori'];?></td>
                     <td class="text-center" width="155">
-                        <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                        <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                        <a href="index.php?halaman=edit_kategori&id=<?php echo $value['id_kategori'];?>" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="index.php?halaman=hapus_kategori&id=<?php echo $value['id_kategori'];?>" class="btn btn-sm btn-danger">Hapus</a>
                     </td>
                 </tr>
                 <?php endforeach?>

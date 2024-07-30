@@ -31,13 +31,22 @@
             <a href="#" id="close"><i class="fa fa-times"></i></a>
             <li>
               <a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a>
+            </li>
 
-            </li>
             <li>
-              <a href="login.php"></i><i class="bi bi-person-circle"></i></a>
+                <a href="#" id="btn_user"><i class="bi bi-person-circle"></i></a>
             </li>
+
+            <div class="user" id="user_menu">
+                <li><a href="login.php">Login</a></li>
+                <li><a href="pembayaran.php">Pembayaran</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </div>
           </ul>
-        </div>
+      </div>
+
+      
+
       <div id="mobile">
         <a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a>
         <i class="fa fa-outdent" id="bar"></i>
@@ -325,7 +334,6 @@ $connection->close();
         <div class="footer-column">
             <h2>Tentang Kami</h2>
             <p>KP Kramat, Desa Sukawali, RT 001 RW 005, Kec. Pakuhaji, Kab. Tangerang</p>
-            <p>Blog</p>
         </div>
     </div>
     <div class="footer-bottom">

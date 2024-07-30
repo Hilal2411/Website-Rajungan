@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', addToCart);
     });
 
+    // Ketika tombol Navbar user di klik
+    const btnUser = document.querySelector('#btn_user');
+    const userMenu = document.querySelector('#user_menu');
+    
+    btnUser.onclick = (e) => {
+        userMenu.classList.toggle('active');
+        e.preventDefault();
+    };
+
     function addToCart(event) {
         const productElement = event.target.closest('.pro');
         const name = productElement.dataset.name;
