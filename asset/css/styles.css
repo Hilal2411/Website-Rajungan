@@ -150,6 +150,7 @@ button.white {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 #navbar li {
   list-style: none;
@@ -188,7 +189,7 @@ button.white {
   width: 10rem;
   padding: 0 1rem;
   color: #eee;
-  background-color: #fff;
+  background-color: #e3e6f3;
   text-align: center;
   border-radius: 5px 5px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
@@ -220,6 +221,45 @@ button.white {
   max-height: 200px; /* Set this to the height you need */
   opacity: 1;
 }
+
+/* Menu Icon Styling */
+.menu-icon {
+  font-size: 28px;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #e3e6f3;
+    padding: 30px !important;
+  }
+
+  #navbar.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  #navbar li {
+    margin-bottom: 20px; /* Adds space between the <li> elements */
+  }
+
+  #navbar li:last-child {
+    margin-bottom: 0; /* Removes the extra margin after the last <li> element */
+  }
+}
+
+
+
 
 #mobile {
   display: none;

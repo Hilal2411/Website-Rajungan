@@ -11,47 +11,33 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+    <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css">
   </head>
   <body>
-   <section id="header">
-      <a href="#"><img src="" class="logo" alt="" /></a>
-        <div>
-          <ul id="navbar">
-            <li><a class="active"  href="#hero">Beranda</a></li>
-            <li><a href="#product1">Produk</a></li>
-            <li><a href="#carousel">Artikel</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-            <a href="#" id="close"><i class="fa fa-times"></i></a>
-            <li>
-              <a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a>
-            </li>
-
-            <li>
-                <a href="#" id="btn_user"><i class="bi bi-person-circle"></i></a>
-            </li>
-
-            <div class="user" id="user_menu">
-                <li><a href="login.php">Login</a></li>
-                <li><a href="pembayaran.php">Pembayaran</a></li>
-                <li><a href="logout.php">Logout</a></li>
-            </div>
-          </ul>
-      </div>
-
+    <section id="header">
+      <a href="#"><img src="" class="logo"  /></a>
       
-
-      <div id="mobile">
-        <a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a>
-        <i class="fa fa-outdent" id="bar"></i>
+      <div class="menu-icon" id="menu-icon">
+        <i class="ph ph-list"></i>
       </div>
+
+      <ul id="navbar">
+        <li><a class="active" href="#hero">Beranda</a></li>
+        <li><a href="#product1">Produk</a></li>
+        <li><a href="#carousel">Artikel</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+        <li><a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a></li>
+        <li><a href="#" id="btn_user"><i class="bi bi-person-circle"></i></a></li>
+        <div class="user" id="user_menu">
+            <li><a href="login.php">Login</a></li>
+            <li><a href="pembayaran.php">Pembayaran</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </div>
+      </ul>
     </section>
+
 
     <!-- Content of the page -->
 

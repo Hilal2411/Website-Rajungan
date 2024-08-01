@@ -1,11 +1,17 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom,#BDCDD6, #088178 );
+    background: linear-gradient(to bottom, #BDCDD6, #088178);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    position: relative;
+    overflow: hidden; /* Tambahkan overflow hidden */
+}
+/* Optional: Define a fixed height and overflow hidden for the body */
+body.swal2-shown {
+    overflow: hidden;
 }
 
 .container {
@@ -15,6 +21,7 @@ body {
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     position: relative;
+    z-index: 1;
 }
 
 .form-container {
@@ -88,3 +95,5 @@ form p a {
     color: #3572EF;
     text-decoration: none;
 }
+
+

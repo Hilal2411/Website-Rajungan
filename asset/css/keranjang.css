@@ -61,6 +61,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    
   }
   #navbar li {
     list-style: none;
@@ -89,6 +90,83 @@ body {
     position: absolute;
     bottom: -4px;
     left: 20px;
+  }
+  
+  #navbar .user{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    height: 15vh;
+    width: 10rem;
+    padding: 0 1rem;
+    color: #eee;
+    background-color: #e3e6f3;
+    text-align: center;
+    border-radius: 5px 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
+    transition: 0.3s;
+  }
+  
+  #navbar .user.active{
+    right: 20px;
+  }
+  #navbar .user li{
+    list-style: none;
+    margin: 15px;
+  }
+  
+  #navbar .user a{
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .user {
+    display: none;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  .user.active {
+    display: block;
+    max-height: 200px; /* Set this to the height you need */
+    opacity: 1;
+  }
+  
+  /* Menu Icon Styling */
+  .menu-icon {
+    font-size: 28px;
+    display: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    #navbar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #e3e6f3;
+      padding: 30px !important;
+    }
+  
+    #navbar.show {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    #navbar li {
+      margin-bottom: 20px; /* Adds space between the <li> elements */
+    }
+  
+    #navbar li:last-child {
+      margin-bottom: 0; /* Removes the extra margin after the last <li> element */
+    }
   }
   
   #mobile {
@@ -352,7 +430,7 @@ footer {
   .footer-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px; 
+    margin-bottom: 10px !important; 
   }
   
   .footer-column {

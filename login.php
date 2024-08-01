@@ -28,13 +28,15 @@
                 <img src="./asset/img/Logo.png" alt="Logo">
                 <h2>Registrasi</h2>
             </div>
-            <form>
-                <input type="text" placeholder="User Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button>Signup</button>
+            <form method="post">
+                <input type="text" name="username" placeholder="User Name" required>
+                <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" name="signup">Signup</button>
                 <p>Already Have Account? <a href="#" onclick="toggleForms('login')">Login</a></p>
             </form>
+
         </div>
         <!-- Menu Forget Akun -->
         <div class="form-container forgot-password-container" id="forgot-password-container" style="display: none;">
@@ -60,6 +62,11 @@
     <script src="../asset/js/sb-admin-2.min.js"></script>
     <!-- Sweet Alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="https://cdn.notiflix.com/notiflix-3.2.6.min.css" />
+
+    <script src="https://cdn.notiflix.com/notiflix-3.2.6.min.js"></script>
+
 </body>
 </html>
 
@@ -175,4 +182,87 @@ if(isset($_POST['login'])) {
               </script>";
     }
 }
+
+if(isset($_POST['signup'])) {
+    $username = $_POST['username'];
+    $password = sha1($_POST['password']); // Mengenkripsi password dengan sha1
+    $nama_lengkap = $_POST['nama_lengkap']; // Ambil nama lengkap dari form
+
+    // Periksa apakah username sudah digunakan
+    $cek_user = $connection->query("SELECT * FROM account WHERE username='$username'");
+    
+    if ($cek_user->num_rows > 0) {
+        // Username sudah ada
+        echo "<script>
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                });
+
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Username sudah digunakan'
+                });
+              </script>";
+    } else {
+        // Insert data ke database
+        $insert = $connection->query("INSERT INTO account (username, password, nama_lengkap, id_role) VALUES ('$username', '$password', '$nama_lengkap', 2)");
+
+        if ($insert) {
+            // Berhasil insert data
+            echo "<script>
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    });
+
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Akun Anda telah dibuat'
+                    }).then(() => {
+                        window.location = 'login.php';
+                    });
+                  </script>";
+        } else {
+            // Gagal insert data
+            echo "<script>
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    });
+
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Terjadi kesalahan, coba lagi nanti'
+                    });
+                  </script>";
+        }
+    }
+}
+
+
+
+
+
 ?>

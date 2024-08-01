@@ -111,7 +111,7 @@ if(!isset($_SESSION['id_role'])) {
             <li class="nav-item">
                 <a class="nav-link" href="index.php?halaman=pelanggan">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Pelanggan</span></a>
+                    <span>Role akun</span></a>
             </li>
 
             <li class="nav-item">

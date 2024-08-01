@@ -26,6 +26,7 @@
               <th data-field="total_harga">TOTAL HARGA</th>
               <th data-field="status">STATUS</th>
               <th data-field="hapus">HAPUS</th>
+              <th data-field="bayar">BAYAR</th>
             </tr>
           </thead>
           <tbody>

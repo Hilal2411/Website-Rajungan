@@ -21,7 +21,7 @@ if (!isset($_SESSION['id_role'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.1/dist/bootstrap-table.min.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css">
     <!-- Midtrans -->
     <script type="text/javascript"
         src="https://app.stg.midtrans.com/snap/snap.js"
@@ -29,23 +29,26 @@ if (!isset($_SESSION['id_role'])) {
 
 </head>
 <body>
-<section id="header">
-        <a href="#"><img src="" class="logo" alt="" /></a>
-        <div>
-            <ul id="navbar">
-                <li><a class="active" href="index.php#hero">Beranda</a></li>
-                <li><a href="index.php#product1">Produk</a></li>
-                <li><a href="index.php#carousel">Artikel</a></li>
-                <li><a href="index.php#kontak">Kontak</a></li>
-                <a href="#" id="close"><i class="fa fa-times"></i></a>
-                <li><a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a></li>
-                <li><a href="login.php"><i class="bi bi-person-circle"></i></a></li>
-            </ul>
+    <section id="header">
+      <a href="#"><img src="" class="logo"  /></a>
+      
+      <div class="menu-icon" id="menu-icon">
+        <i class="ph ph-list"></i>
+      </div>
+
+      <ul id="navbar">
+        <li><a class="active" href="index.php#hero">Beranda</a></li>
+        <li><a href="index.php#product1">Produk</a></li>
+        <li><a href="index.php#carousel">Artikel</a></li>
+        <li><a href="index.php#kontak">Kontak</a></li>
+        <li><a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a></li>
+        <li><a href="#" id="btn_user"><i class="bi bi-person-circle"></i></a></li>
+        <div class="user" id="user_menu">
+            <li><a href="login.php">Login</a></li>
+            <li><a href="pembayaran.php">Pembayaran</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </div>
-        <div id="mobile">
-            <a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a>
-            <i class="fa fa-outdent" id="bar"></i>
-        </div>
+      </ul>
     </section>
 
     <h1 style="text-align: center;">Keranjang Belanja</h1>
