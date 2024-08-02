@@ -199,7 +199,6 @@ if(!isset($_SESSION['id_role'])) {
                             }
 
 
-
                             // Halaman Produk
                             elseif ($_GET['halaman'] == "produk") {
                                 include 'produk.php';
@@ -223,9 +222,6 @@ if(!isset($_SESSION['id_role'])) {
                             }
 
 
-
-
-
                             // Halaman Pembelian
                             elseif ($_GET['halaman'] == "pembelian") {
                                 include 'pembelian.php';
@@ -244,6 +240,11 @@ if(!isset($_SESSION['id_role'])) {
                             elseif ($_GET['halaman'] == "pelanggan") {
                                 include 'pelanggan.php';
                             }
+                            // Halaman Ubah Role
+                            elseif ($_GET['halaman'] == "ubah_role") {
+                                include 'edit/ubah_role.php';
+                            }
+
                         } else {
                             include 'dashboard.php';
                         }
