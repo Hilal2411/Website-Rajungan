@@ -37,8 +37,8 @@
                         }
                         echo "</td>";
                         echo "<td class='text-center' width='150'>";
-                        echo "<button class='btn btn-sm btn-success btn-change-role' data-id='".$row['id_admin']."' data-role='1'>Jadikan Admin</button> ";
-                        echo "<button class='btn btn-sm btn-primary btn-change-role' data-id='".$row['id_admin']."' data-role='2'>Jadikan Pembeli</button>";
+                        echo "<button class='btn btn-sm btn-success btn-change-role'  data-id='".$row['id_admin']."' data-role='1'>Admin</button> ";
+                        echo "<button class='btn btn-sm btn-primary btn-change-role' data-id='".$row['id_admin']."' data-role='2'>Pembeli</button>";
                         echo "</td>";
                         echo "</tr>";
                         $no++;

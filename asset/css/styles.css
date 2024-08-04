@@ -281,13 +281,19 @@ button.white {
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
 }
+
 #hero h4 {
   padding-bottom: 15px;
 }
+
 #hero h1 {
   color: #088178;
+  margin-bottom: 20px;
 }
+
 #hero button {
   background-image: url('img/button.png');
   background-color: transparent;
@@ -298,6 +304,26 @@ button.white {
   cursor: pointer;
   font-weight: 700;
   font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background-position: top 20% right 0;
+    background-size: contain;
+  }
+
+  #hero h1 {
+    font-size: 24px;
+  }
+
+  #hero button {
+    padding: 12px 40px;
+    font-size: 14px;
+  }
 }
 
 
@@ -699,24 +725,27 @@ section {
 }
 
 /* CSS untuk mengatur layout responsif */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .col-md-6 {
       width: 100%;
   }
-}
+} */
 
-/* Footer */
 footer {
   background-color: #6096B4;
   color: #FFFFFF;
   padding: 20px 40px;
   text-align: left;
+  margin-bottom: 0 !important; /* Menghapus margin atas dan bawah */
+  position: relative; /* Pastikan berada di bawah konten */
+  width: 100%;
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px; 
+display: flex;
+justify-content: space-between;
+margin-bottom: 0;
+flex-wrap: wrap;
 }
 
 .footer-column {
@@ -724,13 +753,13 @@ footer {
 }
 
 .footer-column a {
-  color: #465b52; /* Warna link diubah menjadi putih */
+  color: #465b52;
   text-decoration: none;
 }
 
 .footer-column a:hover {
-  color: hsl(154, 16%, 59%); /* Warna saat hover tetap putih */
-  text-decoration: underline; /* Atau efek lainnya yang diinginkan saat hover */
+  color: hsl(154, 16%, 59%);
+  text-decoration: underline;
 }
 
 .footer-column h2 {
@@ -741,7 +770,6 @@ footer {
 .footer-column p {
   margin: 5px 0;
   font-size: 16px;
-  text-decoration: none;
 }
 
 .footer-bottom {
@@ -774,4 +802,20 @@ footer {
 .footer-social img {
   width: 20px;
   height: 20px;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }

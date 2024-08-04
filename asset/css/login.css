@@ -7,9 +7,9 @@ body {
     height: 100vh;
     margin: 0;
     position: relative;
-    overflow: hidden; /* Tambahkan overflow hidden */
+    overflow: hidden; /* Overflow hidden */
 }
-/* Optional: Define a fixed height and overflow hidden for the body */
+
 body.swal2-shown {
     overflow: hidden;
 }
@@ -96,4 +96,27 @@ form p a {
     text-decoration: none;
 }
 
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Make container responsive */
+        margin: 0 20px;
+    }
 
+    .form-container {
+        padding: 20px;
+    }
+
+    .header h2 {
+        font-size: 20px;
+    }
+
+    form input {
+        padding: 8px;
+        margin: 8px 0;
+    }
+
+    form button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}

@@ -1,492 +1,526 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'League Spartan', Futura;
+  
 }
 
- h1 {
+h1 {
   font-size: 50px;
   line-height: 64px;
   color: #222;
   margin-top: 10% mp !important;
 } 
- h2 {
+
+h2 {
   font-size: 46px;
   line-height: 54px;
   color: #222;
 }
+
 h4 {
   font-size: 20px;
   color: #222;
 }
+
 h6 {
   font-weight: 700;
   font-size: 15px;
 }
- p {
+
+p {
   font-size: 16px mp !important;
   color: #465b52;
   margin: 15px 0 20px 0;
 }  
 
-body {
-    font-family: Arial, sans-serif;
-    padding: 0;
-    background-color: #ffffff !important;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin-top: 20%;
+html, body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  background-color: #ffffff !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 0;
+  overflow-x: hidden;
 }
 
-
 /* Header */
-
 #header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-    background: #e3e6f3;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    left: 0;
-    margin-bottom: 5%;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #e3e6f3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  margin-bottom: 5%;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+  content: '';
+  width: 30%;
+  height: 3px;
+  background: #088178;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+#navbar .user {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: 15vh;
+  width: 10rem;
+  padding: 0 1rem;
+  color: #eee;
+  background-color: #e3e6f3;
+  text-align: center;
+  border-radius: 5px 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
+  transition: 0.3s;
+}
+
+#navbar .user.active {
+  right: 20px;
+}
+
+#navbar .user li {
+  list-style: none;
+  margin: 15px;
+}
+
+#navbar .user a {
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.user {
+  display: none;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.user.active {
+  display: block;
+  max-height: 200px; /* Set this to the height you need */
+  opacity: 1;
+}
+
+/* Menu Icon Styling */
+.menu-icon {
+  font-size: 28px;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
   #navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-  }
-  #navbar li {
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
-  }
-  #navbar li a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition: 0.3s ease;
-  }
-  
-  #navbar li a:hover,
-  #navbar li a.active {
-    color: #088178;
-  }
-  
-  #navbar li a.active::after,
-  #navbar li a:hover::after {
-    content: '';
-    width: 30%;
-    height: 3px;
-    background: #088178;
+    display: none;
+    flex-direction: column;
     position: absolute;
-    bottom: -4px;
-    left: 20px;
-  }
-  
-  #navbar .user{
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    height: 15vh;
-    width: 10rem;
-    padding: 0 1rem;
-    color: #eee;
+    top: 60px;
+    left: 0;
+    width: 100%;
     background-color: #e3e6f3;
-    text-align: center;
-    border-radius: 5px 5px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
-    transition: 0.3s;
+    padding: 30px !important;
   }
-  
-  #navbar .user.active{
-    right: 20px;
+
+  #navbar.show {
+    display: flex;
   }
-  #navbar .user li{
-    list-style: none;
-    margin: 15px;
-  }
-  
-  #navbar .user a{
-    text-decoration: none;
-    font-size: 1rem;
-  }
-  .user {
-    display: none;
-    opacity: 0;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    max-height: 0;
-    overflow: hidden;
-  }
-  
-  .user.active {
-    display: block;
-    max-height: 200px; /* Set this to the height you need */
-    opacity: 1;
-  }
-  
-  /* Menu Icon Styling */
+
   .menu-icon {
-    font-size: 28px;
-    display: none;
-    cursor: pointer;
-  }
-  
-  @media (max-width: 768px) {
-    #navbar {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #e3e6f3;
-      padding: 30px !important;
-    }
-  
-    #navbar.show {
-      display: flex;
-    }
-  
-    .menu-icon {
-      display: block;
-    }
-  
-    #navbar li {
-      margin-bottom: 20px; /* Adds space between the <li> elements */
-    }
-  
-    #navbar li:last-child {
-      margin-bottom: 0; /* Removes the extra margin after the last <li> element */
-    }
-  }
-  
-  #mobile {
-    display: none;
-    align-items: center;
-  }
-  
-  #close {
-    display: none;
+    display: block;
   }
 
+  #navbar li {
+    margin-bottom: 20px; /* Adds space between the <li> elements */
+  }
 
+  #navbar li:last-child {
+    margin-bottom: 0; /* Removes the extra margin after the last <li> element */
+  }
+}
+
+#mobile {
+  display: none;
+  align-items: center;
+}
+
+#close {
+  display: none;
+}
 
 .container {
-    padding: 0 20px;
-    flex: 1;
+  padding: 0 ;
+  flex: 1;
+  max-width: 100%; 
 }
 
 h1 {
-    text-align: left;
-    margin-bottom: 20px;
-    color: #333;
-    margin-top: 50px;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #333;
+  margin-top: 50px;
 }
 
 .cart-table {
-    width: 100%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    margin-bottom: 50px;
-    border-radius: 20px ;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    overflow: hidden;
-    border: 5px solid #ddd ;
-    overflow-x: auto; /* Add this for horizontal scrolling */
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+  border: 5px solid #ddd;
 }
 
 .cart-table th, .cart-table td {
-    border-bottom: 1px solid #ddd;
-    padding: 15px;
-    text-align: left;
-    white-space: nowrap; /* Prevent text wrapping */
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  text-align: left;
+  white-space: nowrap; /* Mencegah teks membungkus */
 }
 
 .cart-table th {
-    background-color: #f1f1f1;
-    color: #333;
-    font-weight: bold;
-    border-bottom: 2px solid #ddd;
+  background-color: #f1f1f1;
+  color: #333;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
 }
 
 .cart-table td img {
-    width: 100px;
-    height: auto;
-    border-radius: 5px;
-    border: 2px solid #ddd;
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+  border: 2px solid #ddd;
 }
 
 .quantity-controls {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .quantity-controls input {
-    text-align: center;
-    width: 50px;
-    margin: 0 10px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    padding: 5px;
+  text-align: center;
+  width: 50px;
+  margin: 0 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .quantity-controls button {
-    background-color: #007bff;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .quantity-controls button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .delete-button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 5px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .delete-button:hover {
-    background-color: #c82333;
+  background-color: #c82333;
 }
 
 .delete-btn svg {
-    margin-right: 5px;
-    width: 16px;
-    height: 16px;
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
 }
 
+/* Cart total styling */
 .cart-total {
-    text-align: right;
-    margin-right: 3%;
-    padding-bottom: 8px;
-    font-size: 1.2em;
-    margin-top: 20px;
-    color: #333;
+  text-align: right;
+  margin-right: 3%;
+  padding-bottom: 8px;
+  font-size: 1.2em;
+  margin-top: 20px;
+  color: #333;
 }
 
+/* Cart actions styling */
 .cart-actions {
-    text-align: right;
+  text-align: right;
 }
 
 .btn {
-    padding: 10px 20px;
-    margin-right: 3%;
-    margin-bottom: 10%;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  margin-right: 3%;
+  margin-bottom: 10%;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .checkout-btn {
-    background-color: #088178 !important;
-    color: white !important;
-    border: none !important;
+  background-color: #088178 !important;
+  color: white !important;
+  border: none !important;
 }
 
 .checkout-btn:hover {
-    background-color: #065953 !important;
+  background-color: #065953 !important;
+}
+
+/* Untuk lebar layar kurang dari 768px */
+@media (max-width: 768px) {
+  .cart-table {
+    display: block;
+    overflow-x: auto; /* Memungkinkan scroll horizontal pada tabel */
+    white-space: nowrap; /* Mencegah teks dalam tabel terbungkus */
+  }
 }
 
 /* Modal Styles */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-    background-color: #ffffff;
-    margin: 15% auto;
-    padding: 30px 20px;
-    border: 1px solid #888;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #ffffff;
+  margin: 15% auto;
+  padding: 30px 20px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .modal-content:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 25px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #555;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
 }
 
 input, textarea {
-    width: calc(100% - 20px);
-    padding: 12px 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
+  width: calc(100% - 20px);
+  padding: 12px 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus, textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 .submit-btn {
-    background-color: #088178 !important;
-    border: none !important;
-    color: white !important;
+  background-color: #088178 !important;
+  border: none !important;
+  color: white !important;
 }
 
 .submit-btn:hover {
-    background-color: #065953 !important;
+  background-color: #065953 !important;
 }
 
 .submit-btn:active {
-    background-color: #003f7f !important;
+  background-color: #003f7f !important;
 }
 
 .submit-btn:focus {
-    outline: none !important;
-    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3) !important;
 }
 
 .cart-total-modal {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 18px;
-    color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
 }
 
 /* Footer */
-
-/* Footer */
 footer {
-    margin-top: 5%;
     background-color: #6096B4;
     color: #FFFFFF;
     padding: 20px 40px;
     text-align: left;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px !important; 
-  }
-  
-  .footer-column {
+    margin-bottom: 0 !important; /* Menghapus margin atas dan bawah */
+    position: relative; /* Pastikan berada di bawah konten */
+    width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.footer-column {
     width: 30%;
-  }
-  
-  .footer-column a {
-    color: #465b52; /* Warna link diubah menjadi putih */
+}
+
+.footer-column a {
+    color: #465b52;
     text-decoration: none;
-  }
-  
-  .footer-column a:hover {
-    color: hsl(154, 16%, 59%); /* Warna saat hover tetap putih */
-    text-decoration: underline; /* Atau efek lainnya yang diinginkan saat hover */
-  }
-  
-  .footer-column h2 {
+}
+
+.footer-column a:hover {
+    color: hsl(154, 16%, 59%);
+    text-decoration: underline;
+}
+
+.footer-column h2 {
     font-size: 18px;
     margin-bottom: 10px;
-  }
-  
-  .footer-column p {
+}
+
+.footer-column p {
     margin: 5px 0;
     font-size: 16px;
-    text-decoration: none;
-  }
-  
-  .footer-bottom {
+}
+
+.footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #ffffff33;
     padding-top: 20px;
-  }
-  
-  .footer-bottom p {
+}
+
+.footer-bottom p {
     margin: 0;
-  }
-  
-  .footer-links {
+}
+
+.footer-links {
     display: flex;
     gap: 15px;
-  }
-  
-  .footer-links a {
+}
+
+.footer-links a {
     color: #ffffff33;
     text-decoration: none;
     font-size: 14px;
-  }
-  
-  .footer-social a {
+}
+
+.footer-social a {
     margin-left: 15px;
-  }
-  
-  .footer-social img {
+}
+
+.footer-social img {
     width: 20px;
     height: 20px;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  footer {
+    padding: 20px;
   }
-  
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

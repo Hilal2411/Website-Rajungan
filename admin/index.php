@@ -51,6 +51,10 @@ if(!isset($_SESSION['id_role'])) {
      <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    
+
      
 
 
@@ -65,7 +69,7 @@ if(!isset($_SESSION['id_role'])) {
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -74,13 +78,6 @@ if(!isset($_SESSION['id_role'])) {
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.php?halaman=dashboard">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -92,31 +89,31 @@ if(!isset($_SESSION['id_role'])) {
 
             <li class="nav-item">
                 <a class="nav-link" href="index.php?halaman=kategori">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="ph ph-note-pencil" style="font-size: 20px;"></i>
                     <span>Kategori</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="index.php?halaman=pembelian">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="ph ph-shopping-cart" style="font-size: 20px;"></i>
                     <span>Pembelian</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="index.php?halaman=produk">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="ph ph-box-arrow-up" style="font-size: 20px;"></i>
                     <span>Produk</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="index.php?halaman=pelanggan">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="ph ph-user-switch" style="font-size: 20px;"></i>
                     <span>Role akun</span></a>
             </li>
 
             <li class="nav-item">
             <a id="logout-link" class="nav-link" href="index.php?halaman=logout">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="ph ph-sign-out" style="font-size: 20px;"></i>
             <span>Logout</span>
              </a>
             </li>
