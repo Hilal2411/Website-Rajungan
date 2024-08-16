@@ -270,25 +270,25 @@ $connection->close();
       <div class="container">
           <div class="row">
               <div class="col-md-6">
-                  <form id="request" class="main_form">
-                      <div class="row">
-                          <div class="col-md-12">
-                              <input class="contactus" placeholder="Nama" type="text" name="Name"> 
-                          </div>
-                          <div class="col-md-12">
-                              <input class="contactus" placeholder="Email" type="email" name="Email"> 
-                          </div>
-                          <div class="col-md-12">
-                              <input class="contactus" placeholder="No Handphone" type="text" name="Phone Number">                          
-                          </div>
-                          <div class="col-md-12">
-                              <textarea class="textarea" placeholder="Pesan" name="Message"></textarea>
-                          </div>
-                          <div class="col-md-12">
-                              <button class="send_btn">Kirim</button>
-                          </div>
-                      </div>
-                  </form>
+              <form id="request" class="main_form" action="submit_contact.php" method="POST">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="Nama" type="text" name="Name" required> 
+                        </div>
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="Email" type="email" name="Email" required> 
+                        </div>
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="No Handphone" type="text" name="phone_number" required>                          
+                        </div>
+                        <div class="col-md-12">
+                            <textarea class="textarea" placeholder="Pesan" name="Message" required></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="send_btn">Kirim</button>
+                        </div>
+                    </div>
+                </form>
               </div>
               <div class="col-md-6">
                   <div class="map_main">
@@ -300,6 +300,11 @@ $connection->close();
           </div>
        </div>
   </section>
+
+  <!-- digunakan untuk mengupload data kontak -->
+<!-- digunakan untuk mengupload data kontak -->
+
+
 
   <!-- Footer -->
   <footer>

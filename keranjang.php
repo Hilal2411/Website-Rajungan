@@ -152,6 +152,9 @@ if (!isset($_SESSION['id_role'])) {
 </html>
 
 <?php
+// Start output buffering
+ob_start();
+
 include 'connection/connection.php'; // Include the database connection file
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -179,9 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Insert data into pembelian table
-    // Assuming $tanggal is already in the correct format (YYYY-MM-DD)
     $tanggal_pembelian = $tanggal;
-
     $sql_pembelian = "INSERT INTO pembelian (id_pelanggan, tanggal_pembelian) VALUES (?, ?)";
     if ($stmt_pembelian = $connection->prepare($sql_pembelian)) {
         $stmt_pembelian->bind_param("is", $id_pelanggan, $tanggal_pembelian);
@@ -210,11 +211,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Redirect to confirmation page
-    header("Location: pembayaran.php");
+    // Close the connection
+    $connection->close();
+
+    // End output buffering and flush the output
+    ob_end_flush();
+    
+    // JavaScript to redirect the user to pembayaran.php
+    echo '<script type="text/javascript">
+            window.onload = function() {
+                window.location.href = "pembayaran.php";
+            };
+          </script>';
     exit();
 }
-
-$connection->close();
 ?>
-

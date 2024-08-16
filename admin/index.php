@@ -81,6 +81,11 @@ if(!isset($_SESSION['id_role'])) {
 
             <!-- Divider -->
             <hr class="sidebar-divider">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?halaman=dashboard">
+                    <i class="ph ph-speedometer" style="font-size: 20px;"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -106,10 +111,17 @@ if(!isset($_SESSION['id_role'])) {
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="index.php?halaman=pesan">
+                <i class="ph ph-chat-circle-dots" style="font-size: 20px;"></i>
+                    <span>Pesan</span></a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="index.php?halaman=pelanggan">
                 <i class="ph ph-user-switch" style="font-size: 20px;"></i>
                     <span>Role akun</span></a>
             </li>
+
 
             <li class="nav-item">
             <a id="logout-link" class="nav-link" href="index.php?halaman=logout">
@@ -176,8 +188,12 @@ if(!isset($_SESSION['id_role'])) {
                     <!-- Page Heading -->
                     <?php
                         if (isset($_GET['halaman'])) {
+
+                            if ($_GET['halaman'] == "dashboard") {
+                                include 'dashboard.php';
+                            }
                             // Halaman Kategori
-                            if ($_GET['halaman'] == "kategori") {
+                            elseif ($_GET['halaman'] == "kategori") {
                                 include 'kategori.php';
                             }
                             elseif($_GET['halaman']=="tambah_kategori") {
@@ -233,10 +249,21 @@ if(!isset($_SESSION['id_role'])) {
                                     // kode untuk logout
                                 }
                             }
-                            // Halaman Pelanggan
-                            elseif ($_GET['halaman'] == "pelanggan") {
-                                include 'pelanggan.php';
+
+                           
+
+                            // Halaman Kontak Pelanggan
+                            elseif ($_GET['halaman'] == "pesan") {
+                                include 'pesan.php';
                             }
+                            elseif ($_GET['halaman'] == "detail_pesan") {
+                                include 'detail/detail_pesan.php';
+                            }
+                            elseif ($_GET['halaman'] == "hapus_pesan") {
+                                include 'hapus/hapus_pesan.php';
+                            }
+
+
                             // Halaman Ubah Role
                             elseif ($_GET['halaman'] == "ubah_role") {
                                 include 'edit/ubah_role.php';
