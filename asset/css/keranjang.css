@@ -26,7 +26,211 @@ h4 {
   color: #222;
 }
 
-h6 {
+h6 {/* Kode CSS Umum */
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', Futura;
+  }
+  
+  /* Struktur Flex untuk Halaman Utama */
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 1;
+  }
+  
+  /* Header */
+  #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  
+  #navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  #navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+  }
+  
+  #navbar li a:hover,
+  #navbar li a.active {
+    color: #088178;
+  }
+  
+  #navbar li a.active::after,
+  #navbar li a:hover::after {
+    content: '';
+    width: 30%;
+    height: 3px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+  }
+  
+  .menu-icon {
+    font-size: 28px;
+    display: none;
+    cursor: pointer;
+  }
+  
+  /* Responsif untuk Navbar */
+  @media (max-width: 768px) {
+    #navbar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #e3e6f3;
+      padding: 30px !important;
+    }
+  
+    #navbar.show {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    #navbar li {
+      margin-bottom: 20px;
+    }
+  
+    #navbar li:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #6096B4;
+    padding: 20px 40px;
+    text-align: left;
+    margin-top: auto;
+    width: 100%;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    color: #FFFFFF;
+  }
+  
+  .footer-column {
+    width: 30%;
+  }
+  
+  .footer-column a {
+    color: #465b52;
+    text-decoration: none;
+  }
+  
+  .footer-column a:hover {
+    color: hsl(154, 16%, 59%);
+    text-decoration: underline;
+  }
+  
+  .footer-column h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+  }
+  
+  .footer-column p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #465b52;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ffffff33;
+    padding-top: 20px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    color: #465b52;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .footer-links a {
+    color: #ffffff33;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-social a {
+    margin-left: 15px;
+  }
+  
+  .footer-social img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Responsif untuk Footer */
+  @media (max-width: 768px) {
+    footer {
+      padding: 20px;
+    }
+  
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-column {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
   font-weight: 700;
   font-size: 15px;
 }
