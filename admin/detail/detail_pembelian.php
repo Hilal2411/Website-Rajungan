@@ -24,6 +24,7 @@
 ?>
 
 <div class="row">
+<link rel="stylesheet" href="../asset/css/sb-admin-2.css">
 
     <div class="col-md-4">
         <div class="card shadow bg-white">
@@ -66,41 +67,5 @@
         </div>
     </div>
 
-    <?php
-    $pembelian_produk = array();
-    $ambil = $connection->query("SELECT *FROM pembelian_produk JOIN produk ON pembelian_produk.id_produk=produk.id_produk WHERE pembelian_produk.id_pembelian='$id_pembelian'");
-    while($pecah = $ambil->fetch_assoc())
-    {
-        $pembelian_produk[] = $pecah;
-    }
-    ?>
-
-    <div class="card shadow bgg-white mt-3">
-        <div class="card-body">
-            <table class="table table-bordered table-hover table-striped" id="table">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Harga</th>
-                        <th>Jumlah</th>
-                        <th>Subtotal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($pembelian_produk as $key => $value): ?>
-                    <?php  $subtotal = $value['harga_produk']*$value['jumlah'];?>
-                    <tr>
-                        <td width="50"> <?php echo $key=1;?></td>
-                        <td> <?php echo $value['nama_produk']; ?></td>
-                        <td> Rp. <?php echo number_format($value['harga_produk']); ?></td>
-                        <td><?php echo $value['jumlah']; ?></td>
-                        <td>Rp. <?php echo number_format($subtotal); ?></td>
-                    </tr>
-                    <?php endforeach ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
 
 </div>

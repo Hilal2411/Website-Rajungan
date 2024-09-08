@@ -14,10 +14,30 @@ while($pecah = $ambil->fetch_assoc())
 
 ?>
 
-<a href="index.php?halaman=tambah_produk" class="btn btn-sm btn-success">Tambah Produk</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Page</title>
 
+    <style>
+        
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; 
+        }
+    </style>
+    
+    <!-- Link to sb-admin-2.css -->
+    <link rel="stylesheet" href="../asset/css/sb-admin-2.css">
+
+</head>
+<body>
+<a href="index.php?halaman=tambah_produk" class="btn btn-sm btn-success">Tambah Produk</a>
 <div class=" card shadow bg-white mt-3">
     <div class="card-body">
+    <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped" id="tables">
         <thead>
                <tr>
@@ -53,4 +73,7 @@ while($pecah = $ambil->fetch_assoc())
         </tbody>
     </table>
     </div>
+    </div>
 </div>
+</body>
+</html>

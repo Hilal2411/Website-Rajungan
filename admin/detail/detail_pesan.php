@@ -26,7 +26,7 @@ $connection->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Pesan</title>
-    <link rel="stylesheet" href="path/to/your/css/style.css">
+    <link rel="stylesheet" href="../asset/css/sb-admin-2.css">
 </head>
 <body>
     <div class="shadow p-3 mb-3 bg-white rounded"> 

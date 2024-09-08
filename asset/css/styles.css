@@ -181,33 +181,47 @@ button.white {
   left: 20px;
 }
 
-#navbar .user{
+#navbar .user {
   position: absolute;
   top: 100%;
   right: -100%;
-  height: 15vh;
-  width: 10rem;
-  padding: 0 1rem;
-  color: #eee;
+  height: auto; /* Sesuaikan secara otomatis berdasarkan konten */
+  width: 8rem; /* Kurangi lebar jika terlalu besar */
+  padding: 0.5rem; /* Kurangi padding untuk mengurangi ruang kosong */
+  color: #333; /* Ganti warna teks jika diperlukan */
   background-color: #e3e6f3;
   text-align: center;
-  border-radius: 5px 5px;
+  border-radius: 5px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
-#navbar .user.active{
+#navbar .user.active {
   right: 20px;
 }
-#navbar .user li{
+
+#navbar .user li {
   list-style: none;
-  margin: 15px;
+  margin: 10px 0; /* Sesuaikan margin vertikal */
 }
 
-#navbar .user a{
+#navbar .user a {
   text-decoration: none;
   font-size: 1rem;
 }
+
+#navbar .user li {
+  list-style: none;
+  margin: 10px 0; /* Mengatur margin atas dan bawah */
+  padding: 0; /* Pastikan tidak ada padding */
+}
+
+/* Sesuaikan margin untuk item terakhir */
+#navbar .user li:last-child {
+  margin-bottom: 0; /* Hilangkan margin di bawah elemen terakhir */
+}
+
+/* Atur ulang transisi untuk dropdown */
 .user {
   display: none;
   opacity: 0;
@@ -218,10 +232,9 @@ button.white {
 
 .user.active {
   display: block;
-  max-height: 200px; /* Set this to the height you need */
+  max-height: 100px; /* Kurangi tinggi maksimal */
   opacity: 1;
 }
-
 /* Menu Icon Styling */
 .menu-icon {
   font-size: 28px;

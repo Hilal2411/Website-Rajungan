@@ -15,30 +15,10 @@
     <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css">
 </head>
 <body>
-    <section id="header">
-      <a href="#"><img src="" class="logo"  /></a>
-      
-      <div class="menu-icon" id="menu-icon">
-        <i class="ph ph-list"></i>
-      </div>
-
-      <ul id="navbar">
-        <li><a class="active" href="index.php#hero">Beranda</a></li>
-        <li><a href="index.php#product1">Produk</a></li>
-        <li><a href="index.php#carousel">Artikel</a></li>
-        <li><a href="index.php#kontak">Kontak</a></li>
-        <li><a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a></li>
-        <li><a href="#" id="btn_user"><i class="bi bi-person-circle"></i></a></li>
-        <div class="user" id="user_menu">
-            <li><a href="login.php">Login</a></li>
-            <li><a href="pembayaran.php">Pembayaran</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </div>
-      </ul>
-    </section>
+<?php include 'include/navbar.php'; ?>
   
     <div class="container">
-        <h2 class="mt-5">Pembayaran</h2>
+        <h2  class="mt-5 center-heading">Pembayaran</h2>
         <table
           id="table"
           class="table"
@@ -60,6 +40,7 @@
           </thead>
           <tbody>
             <?php  
+          
             include "connection/connection.php";
             $no = 1;
 
@@ -96,37 +77,7 @@
         </table>
     </div>
 
-    <footer>
-    <div class="footer-container">
-        <div class="footer-column">
-            <h2>Produk Daging</h2>
-            <p>Rajungan Jumbo</p>
-            <p>Capit Rajungan</p>
-            <p>Capit Kepiting</p>
-        </div>
-        <div class="footer-column">
-            <h2>Jelajahi </h2>
-            <p><a style="text-decoration:none" href="#hero">Beranda</a></p>
-            <p><a style="text-decoration:none" href="#product1">Produk</a></p>
-            <p><a style="text-decoration:none" href="#carousel">Artikel</a></p>
-            <p><a style="text-decoration:none" href="#kontak">Kontak</a></p>
-        </div>
-        <div class="footer-column">
-            <h2>Tentang Kami</h2>
-            <p>KP Kramat, Desa Sukawali, RT 001 RW 005, Kec. Pakuhaji, Kab. Tangerang</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p style="text-align: center;">©Website Rajungan 2024</p>
-        <div class="footer-links">
-        </div>
-        <div class="footer-social">
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-whatsapp"></i></a>
-        </div>
-    </div>
-</footer>
+    <?php include 'include/footer.php'; ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>

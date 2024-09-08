@@ -16,27 +16,7 @@
     <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css">
   </head>
   <body>
-    <section id="header">
-      <a href="#"><img src="" class="logo"  /></a>
-      
-      <div class="menu-icon" id="menu-icon">
-        <i class="ph ph-list"></i>
-      </div>
-
-      <ul id="navbar">
-        <li><a class="active" href="#hero">Beranda</a></li>
-        <li><a href="#product1">Produk</a></li>
-        <li><a href="#carousel">Artikel</a></li>
-        <li><a href="#kontak">Kontak</a></li>
-        <li><a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a></li>
-        <li><a href="#" id="btn_user"><i class="bi bi-person-circle"></i></a></li>
-        <div class="user" id="user_menu">
-            <li><a href="login.php">Login</a></li>
-            <li><a href="pembayaran.php">Pembayaran</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </div>
-      </ul>
-    </section>
+    <?php include 'include/navbar.php'; ?>
 
 
     <!-- Content of the page -->
@@ -76,13 +56,7 @@
     </section>
     
     <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "web_rajungan";
-
-// Membuat koneksi
-$connection = new mysqli($servername, $username, $password, $dbname);
+include './connection/connection.php';
 
 // Memeriksa koneksi
 if ($connection->connect_error) {
@@ -293,7 +267,7 @@ $connection->close();
               <div class="col-md-6">
                   <div class="map_main">
                       <div class="map-responsive">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.757282412929!2d107.00530937488637!3d-6.163251660402855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69896e74a62497%3A0x6b42737b711e2221!2sWahana%20Harapan!5e0!3m2!1sid!2sid!4v1718461998608!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d247.97980117953537!2d106.5907414708508!3d-6.039008654784649!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1724261982066!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                       </div>
                   </div>
               </div>
@@ -307,37 +281,7 @@ $connection->close();
 
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-        <div class="footer-column">
-            <h2>Produk Daging</h2>
-            <p>Rajungan Jumbo</p>
-            <p>Capit Rajungan</p>
-            <p>Capit Kepiting</p>
-        </div>
-        <div class="footer-column">
-            <h2>Jelajahi </h2>
-            <p><a style="text-decoration:none" href="#hero">Beranda</a></p>
-            <p><a style="text-decoration:none" href="#product1">Produk</a></p>
-            <p><a style="text-decoration:none" href="#carousel">Artikel</a></p>
-            <p><a style="text-decoration:none" href="#kontak">Kontak</a></p>
-        </div>
-        <div class="footer-column">
-            <h2>Tentang Kami</h2>
-            <p>KP Kramat, Desa Sukawali, RT 001 RW 005, Kec. Pakuhaji, Kab. Tangerang</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p style="text-align: center;">©Website Rajungan 2024</p>
-        <div class="footer-links">
-        </div>
-        <div class="footer-social">
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-whatsapp"></i></a>
-        </div>
-    </div>
-</footer>
+  <?php include 'include/footer.php'; ?>
 
 
     <script

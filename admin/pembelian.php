@@ -1,7 +1,3 @@
-<div class="shadow p-3 mb-3 bg-white rounded"> 
-    <h5><b>Halaman Pembelian</b></h5>
-</div>
-
 <?php
 
 $pembelian = array();
@@ -12,8 +8,29 @@ while($pecah = $ambil->fetch_assoc())
 }
 ?>
 
-<div class=" card shadow bg-white">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; 
+        }
+    </style>
+</head>
+<body>
+    <div class="shadow p-3 mb-3 bg-white rounded"> 
+        <h5><b>Halaman Pembelian</b></h5>
+    </div>
+
+
+    <div class=" card shadow bg-white">
     <div class="card-body">
+    <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped" id="tables">
         <thead>
                <tr>
@@ -40,4 +57,7 @@ while($pecah = $ambil->fetch_assoc())
         </tbody>
     </table>
     </div>
+    </div>
 </div>
+</body>
+</html>

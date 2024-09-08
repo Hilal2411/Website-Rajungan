@@ -1,4 +1,3 @@
-
 // untuk navigasi hamburger
 const menuIcon = document.getElementById('menu-icon');
 const navbar = document.getElementById('navbar');

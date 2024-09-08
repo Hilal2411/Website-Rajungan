@@ -1,5 +1,5 @@
 <?php
-session_start();
+ include 'include/navbar.php'; 
 
 
 if (!isset($_SESSION['id_role'])) {
@@ -29,28 +29,6 @@ if (!isset($_SESSION['id_role'])) {
 
 </head>
 <body>
-    <section id="header">
-      <a href="#"><img src="" class="logo"  /></a>
-      
-      <div class="menu-icon" id="menu-icon">
-        <i class="ph ph-list"></i>
-      </div>
-
-      <ul id="navbar">
-        <li><a class="active" href="index.php#hero">Beranda</a></li>
-        <li><a href="index.php#product1">Produk</a></li>
-        <li><a href="index.php#carousel">Artikel</a></li>
-        <li><a href="index.php#kontak">Kontak</a></li>
-        <li><a href="keranjang.php"><i class="fa fa-shopping-bag"></i></a></li>
-        <li><a href="#" id="btn_user"><i class="bi bi-person-circle"></i></a></li>
-        <div class="user" id="user_menu">
-            <li><a href="login.php">Login</a></li>
-            <li><a href="pembayaran.php">Pembayaran</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </div>
-      </ul>
-    </section>
-
     <h1 style="text-align: center;">Keranjang Belanja</h1>
     <table class="cart-table">
         <thead>
@@ -64,7 +42,7 @@ if (!isset($_SESSION['id_role'])) {
             </tr>
         </thead>
         <tbody id="cart-body">
-            <!-- Items will be dynamically added here -->
+            
         </tbody>
     </table>
 
@@ -78,30 +56,40 @@ if (!isset($_SESSION['id_role'])) {
         <span class="close">&times;</span>
         <h2>Checkout</h2>
         <form id="checkoutForm" method="POST">
-            <div class="form-group">
-                <label for="name">Nama:</label>
-                <input type="text" id="name" name="name" required>
+            <div class="form-row">
+                <!-- Left Column: Nama, Alamat, Nomor Telepon -->
+                <div class="form-column-left">
+                    <div class="form-group">
+                        <label for="name">Nama:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Alamat:</label>
+                        <textarea id="address" name="address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+                <!-- Right Column: Email, Tanggal, Jumlah Pembelian -->
+                <div class="form-column-right">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal:</label>
+                        <input type="date" id="tanggal" name="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlah">Jumlah Pembelian:</label>
+                        <input type="number" id="jumlah" name="jumlah" required>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="address">Alamat:</label>
-                <textarea id="address" name="address" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="phone">Nomor Telepon:</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="tanggal">Tanggal:</label>
-                <input type="date" id="tanggal" name="tanggal" required>
-            </div>
-            <div class="form-group">
-                <label for="jumlah">Jumlah Pembelian:</label>
-                <input type="number" id="jumlah" name="jumlah" required>
-            </div>
+
             <input type="hidden" id="total_harga" name="total_harga">
             <div id="cart-total-modal" class="cart-total-modal">Total: Rp0</div>
             <button type="submit" class="btn submit-btn">Submit</button>
@@ -110,36 +98,8 @@ if (!isset($_SESSION['id_role'])) {
 </div>
 
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h2>Produk Daging</h2>
-                <p>Rajungan Jumbo</p>
-                <p>Capit Rajungan</p>
-                <p>Capit Kepiting</p>
-            </div>
-            <div class="footer-column">
-                <h2>Jelajahi </h2>
-                <p><a style="text-decoration:none" href="index.php#hero">Beranda</a></p>
-                <p><a style="text-decoration:none" href="index.php#product1">Produk</a></p>
-                <p><a style="text-decoration:none" href="index.php#carousel">Artikel</a></p>
-                <p><a style="text-decoration:none" href="index.php#kontak">Kontak</a></p>
-            </div>
-            <div class="footer-column">
-                <h2>Tentang Kami</h2>
-                <p>KP Kramat, Desa Sukawali, RT 001 RW 005, Kec. Pakuhaji, Kab. Tangerang</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p style="text-align: center;">© Wisr 2021</p>
-            <div class="footer-links"></div>
-            <div class="footer-social">
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-whatsapp"></i></a>
-            </div>
-        </div>
-    </footer>
+
+<?php include 'include/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="./asset/js/keranjang.js"></script>
@@ -152,10 +112,9 @@ if (!isset($_SESSION['id_role'])) {
 </html>
 
 <?php
-// Start output buffering
 ob_start();
 
-include 'connection/connection.php'; // Include the database connection file
+include 'connection/connection.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
@@ -164,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $tanggal = $_POST['tanggal'];
     $jumlah = $_POST['jumlah'];
-    $total_harga = $_POST['total_harga']; // Get total price from POST data
+    $total_harga = $_POST['total_harga']; 
 
     // Insert data into pelanggan table
     $sql_pelanggan = "INSERT INTO pelanggan (nama_pelanggan, telepon_pelanggan, email_pelanggan, alamat_pelanggan, total_harga) VALUES (?, ?, ?, ?, ?)";
@@ -211,10 +170,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Close the connection
+   
     $connection->close();
 
-    // End output buffering and flush the output
+   
     ob_end_flush();
     
     // JavaScript to redirect the user to pembayaran.php

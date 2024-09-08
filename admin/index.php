@@ -47,6 +47,9 @@ if(!isset($_SESSION['id_role'])) {
 
      <!-- Custom styles for this page -->
      <link href="../asset/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 
      <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -71,9 +74,9 @@ if(!isset($_SESSION['id_role'])) {
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <i class="bi bi-person-bounding-box"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Rajungan Seafood <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-2">Rajungan Seafood <sup>2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -250,7 +253,9 @@ if(!isset($_SESSION['id_role'])) {
                                 }
                             }
 
-                           
+                            elseif($_GET['halaman'] == "pelanggan") {
+                            include 'pelanggan.php';
+                            }
 
                             // Halaman Kontak Pelanggan
                             elseif ($_GET['halaman'] == "pesan") {

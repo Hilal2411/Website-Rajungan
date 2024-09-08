@@ -1,236 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+ 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'League Spartan', Futura;
-  
+
 }
 
-h1 {
-  font-size: 50px;
-  line-height: 64px;
-  color: #222;
-  margin-top: 10% mp !important;
-} 
-
-h2 {
-  font-size: 46px;
-  line-height: 54px;
-  color: #222;
-}
-
-h4 {
-  font-size: 20px;
-  color: #222;
-}
 
 h6 {/* Kode CSS Umum */
-  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'League Spartan', Futura;
-  }
-  
-  /* Struktur Flex untuk Halaman Utama */
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  main {
-    flex: 1;
-  }
-  
-  /* Header */
-  #header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-    background: #e3e6f3;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    left: 0;
-  }
-  
-  #navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #navbar li {
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
-  }
-  
-  #navbar li a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition: 0.3s ease;
-  }
-  
-  #navbar li a:hover,
-  #navbar li a.active {
-    color: #088178;
-  }
-  
-  #navbar li a.active::after,
-  #navbar li a:hover::after {
-    content: '';
-    width: 30%;
-    height: 3px;
-    background: #088178;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
-  }
-  
-  .menu-icon {
-    font-size: 28px;
-    display: none;
-    cursor: pointer;
-  }
-  
-  /* Responsif untuk Navbar */
-  @media (max-width: 768px) {
-    #navbar {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #e3e6f3;
-      padding: 30px !important;
-    }
-  
-    #navbar.show {
-      display: flex;
-    }
-  
-    .menu-icon {
-      display: block;
-    }
-  
-    #navbar li {
-      margin-bottom: 20px;
-    }
-  
-    #navbar li:last-child {
-      margin-bottom: 0;
-    }
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #6096B4;
-    padding: 20px 40px;
-    text-align: left;
-    margin-top: auto;
-    width: 100%;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0;
-    flex-wrap: wrap;
-    color: #FFFFFF;
-  }
-  
-  .footer-column {
-    width: 30%;
-  }
-  
-  .footer-column a {
-    color: #465b52;
-    text-decoration: none;
-  }
-  
-  .footer-column a:hover {
-    color: hsl(154, 16%, 59%);
-    text-decoration: underline;
-  }
-  
-  .footer-column h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #FFFFFF;
-  }
-  
-  .footer-column p {
-    margin: 5px 0;
-    font-size: 16px;
-    color: #465b52;
-  }
-  
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #ffffff33;
-    padding-top: 20px;
-  }
-  
-  .footer-bottom p {
-    margin: 0;
-    color: #465b52;
-  }
-  
-  .footer-links {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .footer-links a {
-    color: #ffffff33;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .footer-social a {
-    margin-left: 15px;
-  }
-  
-  .footer-social img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  /* Responsif untuk Footer */
-  @media (max-width: 768px) {
-    footer {
-      padding: 20px;
-    }
-  
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .footer-column {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  }
-  
+ 
   font-weight: 700;
   font-size: 15px;
 }
@@ -307,15 +87,15 @@ html, body {
   position: absolute;
   top: 100%;
   right: -100%;
-  height: 15vh;
-  width: 10rem;
-  padding: 0 1rem;
-  color: #eee;
+  height: auto; /* Sesuaikan secara otomatis berdasarkan konten */
+  width: 8rem; /* Kurangi lebar jika terlalu besar */
+  padding: 0.5rem; /* Kurangi padding untuk mengurangi ruang kosong */
+  color: #333; /* Ganti warna teks jika diperlukan */
   background-color: #e3e6f3;
   text-align: center;
-  border-radius: 5px 5px;
+  border-radius: 5px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, .5);
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 #navbar .user.active {
@@ -324,7 +104,7 @@ html, body {
 
 #navbar .user li {
   list-style: none;
-  margin: 15px;
+  margin: 10px 0; /* Sesuaikan margin vertikal */
 }
 
 #navbar .user a {
@@ -332,6 +112,18 @@ html, body {
   font-size: 1rem;
 }
 
+#navbar .user li {
+  list-style: none;
+  margin: 10px 0; /* Mengatur margin atas dan bawah */
+  padding: 0; /* Pastikan tidak ada padding */
+}
+
+/* Sesuaikan margin untuk item terakhir */
+#navbar .user li:last-child {
+  margin-bottom: 0; /* Hilangkan margin di bawah elemen terakhir */
+}
+
+/* Atur ulang transisi untuk dropdown */
 .user {
   display: none;
   opacity: 0;
@@ -342,7 +134,7 @@ html, body {
 
 .user.active {
   display: block;
-  max-height: 200px; /* Set this to the height you need */
+  max-height: 100px; /* Kurangi tinggi maksimal */
   opacity: 1;
 }
 
@@ -512,6 +304,16 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
+.submit-btn{
+  background-color: #088178 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.submit-btn:hover {
+  background-color: #065953 !important;
+}
+
 .checkout-btn {
   background-color: #088178 !important;
   color: white !important;
@@ -542,43 +344,55 @@ h1 {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-content {
   background-color: #ffffff;
-  margin: 15% auto;
-  padding: 30px 20px;
-  border: 1px solid #888;
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
+  padding: 40px;
+  border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.modal-content:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+  margin: auto; /* Ensures the content is centered */
 }
 
 .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
   color: #aaa;
-  float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+  color: #555;
 }
 
 h2 {
   text-align: center;
   color: #333;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-column-left,
+.form-column-right {
+  width: 48%;
 }
 
 .form-group {
@@ -588,65 +402,104 @@ h2 {
 label {
   display: block;
   margin-bottom: 8px;
-  font-weight: 500;
-  color: #555;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
 }
 
-input, textarea {
-  width: calc(100% - 20px);
-  padding: 12px 10px;
-  margin-top: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
   font-size: 16px;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border-color: #007bff;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
 textarea {
-  resize: vertical;
+  resize: none;
+  height: 100px;
 }
 
 .submit-btn {
-  background-color: #088178 !important;
-  border: none !important;
-  color: white !important;
+  width: 100%;
+  padding: 14px;
+  background-color: #088178;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .submit-btn:hover {
-  background-color: #065953 !important;
+  background-color: #065953;
 }
 
 .submit-btn:active {
-  background-color: #003f7f !important;
+  background-color: #003f7f;
 }
 
 .submit-btn:focus {
-  outline: none !important;
-  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3) !important;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3);
 }
 
 .cart-total-modal {
-  text-align: center;
-  margin-bottom: 20px;
+  text-align: right;
   font-size: 18px;
   color: #333;
+  margin-top: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-column-left,
+  .form-column-right {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal-content {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+  }
+}
+
 
 /* Footer */
 footer {
-    background-color: #6096B4;
-    color: #FFFFFF;
-    padding: 20px 40px;
-    text-align: left;
-    margin-bottom: 0 !important; /* Menghapus margin atas dan bawah */
-    position: relative; /* Pastikan berada di bawah konten */
-    width: 100%;
+  background-color: #6096B4;
+  padding: 20px 40px;
+  text-align: left;
+  margin-top: auto;
+  width: 100%;
 }
 
 .footer-container {
@@ -654,65 +507,69 @@ footer {
   justify-content: space-between;
   margin-bottom: 0;
   flex-wrap: wrap;
+  color: #FFFFFF;
 }
 
 .footer-column {
-    width: 30%;
+  width: 30%;
 }
 
 .footer-column a {
-    color: #465b52;
-    text-decoration: none;
+  color: #465b52;
+  text-decoration: none;
 }
 
 .footer-column a:hover {
-    color: hsl(154, 16%, 59%);
-    text-decoration: underline;
+  color: hsl(154, 16%, 59%);
+  text-decoration: underline;
 }
 
 .footer-column h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #FFFFFF;
 }
 
 .footer-column p {
-    margin: 5px 0;
-    font-size: 16px;
+  margin: 5px 0;
+  font-size: 16px;
+  color: #465b52;
 }
 
 .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #ffffff33;
-    padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ffffff33;
+  padding-top: 20px;
 }
 
 .footer-bottom p {
-    margin: 0;
+  margin: 0;
+  color: #465b52;
 }
 
 .footer-links {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .footer-links a {
-    color: #ffffff33;
-    text-decoration: none;
-    font-size: 14px;
+  color: #ffffff33;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 .footer-social a {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 .footer-social img {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
-/* For smaller screens */
+/* Responsif untuk Footer */
 @media (max-width: 768px) {
   footer {
     padding: 20px;
@@ -728,3 +585,5 @@ footer {
     margin-bottom: 20px;
   }
 }
+
+
